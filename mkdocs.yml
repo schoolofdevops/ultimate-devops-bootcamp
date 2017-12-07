@@ -1,0 +1,7 @@
+site_name: Ultimate Devops Bootcamp
+pages:
+  - Home: index.md
+  - Outline : preface.md
+  - Ansible: ansible.md
+docs_dir: chapters
+theme: readthedocs
