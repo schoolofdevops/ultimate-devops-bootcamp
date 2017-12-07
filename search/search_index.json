@@ -1,0 +1,39 @@
+{
+    "docs": [
+        {
+            "location": "/", 
+            "text": "Welcome to Ultimate Devops  Bootcamp by School of Devops\n\n\nThis is a Lab Guide which goes along with the Ultimate Devops Bootcamp  Course by School of Devops. \n\n\nFor information about the devops trainign courses visit \nschoolofdevops.com\n.\n\n\nTeam\n\n\n\n\nGourav Shah", 
+            "title": "Home"
+        }, 
+        {
+            "location": "/#welcome-to-ultimate-devops-bootcamp-by-school-of-devops", 
+            "text": "This is a Lab Guide which goes along with the Ultimate Devops Bootcamp  Course by School of Devops.   For information about the devops trainign courses visit  schoolofdevops.com .", 
+            "title": "Welcome to Ultimate Devops  Bootcamp by School of Devops"
+        }, 
+        {
+            "location": "/#team", 
+            "text": "Gourav Shah", 
+            "title": "Team"
+        }, 
+        {
+            "location": "/preface/", 
+            "text": "Preface\n\n\nThis is an example of \"frontmatter\", which comes before the main text of the book.\n\n\nCourse Outline\n\n\nChapter 01: Codifying Devops\n\n\n\n\nWhy Devops  \n\n\nHistory    \n\n\nPrinciples and Practices  \n\n\n\n\nChapter 02: Use Case Workshop\n\n\n\n\nDescription of Use Case\n\n\nOrganization Goals\n\n\nPain Points\n\n\nDiagnosing the issues\n\n\nSolution Design\n\n\n\n\nChapter 03: Git quick dive\n\n\n\n\nGit and Distributed Revision Control\n\n\nRepos\n\n\nBranching and Merging\n\n\nGithub\n\n\nBranching Strategy\n\n\nGit References\n\n\nLab\n\n\nSetting up repos\n\n\nCreate a devops repo  \n\n\n\n\n\n\n\n\nChapter 04: Ansible quick dive\n\n\n\n\nWhy Ansible\n\n\nIaaC\n\n\nConvergence\n\n\nIdempotence\n\n\nAnsible Concepts\n\n\nInventory\n\n\nPlaybooks\n\n\nRoles\n\n\nModules\n\n\nVars/Templates\n\n\n\n\n\n\n\n\nChapter 05: Creating Ansible code for Demo App\n\n\n\n\nPlaybooks for\n\n\nSystem Configurations\n\n\nApplication Configurations\n\n\nDeployment\n\n\n\n\n\n\nAdditional Code for Provisioning Automation\n\n\n\n\nChapter 06: Provisioning Automation\n\n\n\n\nVagrant\n\n\nLabs:\n\n\nCreate dev env\n\n\nIntegrate with Ansible\n\n\n\n\n\n\n\n\nChapter 07: Continous Integration\n\n\n\n\nTheory\n\n\n\n\nChapter 08: Setting up a CI Pipeline with Jenkins\n\n\n\n\nSetup Jenkins\n\n\nCommit Stage Jobs\n\n\nbuild/compile\n\n\nunit test\n\n\nstatic code analysis\n\n\n\n\n\n\nArtifacts Management\n\n\nFunctional Acceptance Testing\n\n\nDeploy to Staging\n\n\nNFR Testing\n\n\n\n\nChapter 09: Cloud and AWS* Cloud and Devop\n\n\n\n\nAWS\n\n\n\n\nChapter 10: Deploy a prod Environment on AWS\n\n\n\n\nDesign considerations\n\n\nAvailability\n\n\nScalability\n\n\nManageability\n\n\nSecurity  \n\n\n\n\n\n\nDeploy to prod, integrate with Jenkins\n\n\n\n\nChapter 11: Containers and Docker\n\n\n\n\nAdvantages of using containers\n\n\nPortability\n\n\nConsistency\n\n\nDensity\n\n\nEco System\n\n\nSpeed\n\n\n\n\n\n\nDocker quick dive\n\n\nRunning Containers\n\n\nOperating Containers\n\n\nPort Mapping\n\n\nBuilding Docker Images\n\n\n\n\n\n\n\n\nChapter 12:  Dockerizing App Stack\n\n\n\n\nBuild Dockerfiles\n\n\nCreate Docker Compose specs\n\n\n\n\nChapter 13: Kubernetes: Taking Containers to Production\n\n\n\n\nCOEs and intro to k8s\n\n\nk8s Quick Dive\n\n\nPods\n\n\ndeployments\n\n\nservices\n\n\nIngress\n\n\nrollouts\n\n\n\n\n\n\n\n\nChapter 14: Deploying Demo app in Production\n\n\n\n\nDeploy k8s Cluster /Minikube\n\n\nCreate k8s objects\n\n\ndeployment\n\n\nservice\n\n\ningress\n\n\n\n\n\n\nRelease Management\n\n\nZero Downtime\n\n\nBlue Green\n\n\nCanary\n\n\n\n\n\n\n\n\nChapter  15: Monitoring\n\n\n\n\nWhy Monitoring ?\n\n\nWhat to monitor\n\n\nLogs\n\n\nAPM\n\n\nHealth\n\n\n\n\n\n\nLabs:\n\n\nSetup log monitoring\n\n\nSetup performance monitoring\n\n\nHealth Monitoring and Alerting", 
+            "title": "Outline"
+        }, 
+        {
+            "location": "/preface/#preface", 
+            "text": "This is an example of \"frontmatter\", which comes before the main text of the book.", 
+            "title": "Preface"
+        }, 
+        {
+            "location": "/preface/#course-outline", 
+            "text": "Chapter 01: Codifying Devops   Why Devops    History      Principles and Practices     Chapter 02: Use Case Workshop   Description of Use Case  Organization Goals  Pain Points  Diagnosing the issues  Solution Design   Chapter 03: Git quick dive   Git and Distributed Revision Control  Repos  Branching and Merging  Github  Branching Strategy  Git References  Lab  Setting up repos  Create a devops repo       Chapter 04: Ansible quick dive   Why Ansible  IaaC  Convergence  Idempotence  Ansible Concepts  Inventory  Playbooks  Roles  Modules  Vars/Templates     Chapter 05: Creating Ansible code for Demo App   Playbooks for  System Configurations  Application Configurations  Deployment    Additional Code for Provisioning Automation   Chapter 06: Provisioning Automation   Vagrant  Labs:  Create dev env  Integrate with Ansible     Chapter 07: Continous Integration   Theory   Chapter 08: Setting up a CI Pipeline with Jenkins   Setup Jenkins  Commit Stage Jobs  build/compile  unit test  static code analysis    Artifacts Management  Functional Acceptance Testing  Deploy to Staging  NFR Testing   Chapter 09: Cloud and AWS* Cloud and Devop   AWS   Chapter 10: Deploy a prod Environment on AWS   Design considerations  Availability  Scalability  Manageability  Security      Deploy to prod, integrate with Jenkins   Chapter 11: Containers and Docker   Advantages of using containers  Portability  Consistency  Density  Eco System  Speed    Docker quick dive  Running Containers  Operating Containers  Port Mapping  Building Docker Images     Chapter 12:  Dockerizing App Stack   Build Dockerfiles  Create Docker Compose specs   Chapter 13: Kubernetes: Taking Containers to Production   COEs and intro to k8s  k8s Quick Dive  Pods  deployments  services  Ingress  rollouts     Chapter 14: Deploying Demo app in Production   Deploy k8s Cluster /Minikube  Create k8s objects  deployment  service  ingress    Release Management  Zero Downtime  Blue Green  Canary     Chapter  15: Monitoring   Why Monitoring ?  What to monitor  Logs  APM  Health    Labs:  Setup log monitoring  Setup performance monitoring  Health Monitoring and Alerting", 
+            "title": "Course Outline"
+        }, 
+        {
+            "location": "/ansible/", 
+            "text": "ansible-galaxy install  -p roles geerlingguy.mysql", 
+            "title": "Ansible"
+        }
+    ]
+}
