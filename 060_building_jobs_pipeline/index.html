@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Building a Pipeline - Ultimate Devops Bootcamp</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Building a Pipeline";
+    var mkdocs_page_input_path = "060_building_jobs_pipeline.md";
+    var mkdocs_page_url = "/060_building_jobs_pipeline/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Ultimate Devops Bootcamp</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../preface/">Outline</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../ansible/">Ansible</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">CI-CD</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../020_install_jenkins_jfrog_artifactory/">Setting up CI-CD Environment</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../030_install_plugins/">Jenkins Global Security and Plugins Configurations</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../040_jenkins_config/">Jenkins Tools Configurations</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../050_jenkins_jobs/">Jenkins Jobs</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Building a Pipeline</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#building-jobs-pipeline">Building Jobs Pipeline</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#creating-more-jobs-to-add-to-pipeline">Creating More Jobs to add to pipeline</a></li>
+        
+            <li><a class="toctree-l4" href="#connecting-jobs">Connecting jobs</a></li>
+        
+            <li><a class="toctree-l4" href="#upstreams-and-downstreams">Upstreams and Downstreams</a></li>
+        
+            <li><a class="toctree-l4" href="#install-pipeline-plugin">Install Pipeline Plugin</a></li>
+        
+            <li><a class="toctree-l4" href="#crete-pipeline-view">Crete Pipeline View</a></li>
+        
+            <li><a class="toctree-l4" href="#run-pipelines">Run pipelines</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../070_frontend/">Build Pipeline For Front-End</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../080_catalogue/">Build Pipeline For Catalogue</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../090_carts/">Build Pipeline For Carts</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Ultimate Devops Bootcamp</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>CI-CD &raquo;</li>
+        
+      
+    
+    <li>Building a Pipeline</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="building-jobs-pipeline">Building Jobs Pipeline</h1>
+<h2 id="creating-more-jobs-to-add-to-pipeline">Creating More Jobs to add to pipeline</h2>
+<p>Lets create 2 more jobs so that we could connect those together to setup a mock build pipeline.</p>
+<p>To create new jobs, you could click on create items, name the job and select the last option which says <strong>Copy from Another Job</strong>.</p>
+<p><img alt="Jobs" src="../images/chap6/copy_from.png" /></p>
+<p>For this tutorial, lets create jobs by name <strong>job2</strong> and <strong>job3</strong> which should be copies of job1.</p>
+<p><img alt="Jobs" src="../images/chap6/3_jobs.jpg" /></p>
+<p>At the end of this exercise, you should see 3 jobs listed on jenkins dashboard as above. While creating Job2 and Job3 for the first time, do not use any build triggers. We will update the configurations while defining upstream/downstream.</p>
+<h2 id="connecting-jobs">Connecting jobs</h2>
+<p>Lets now create a pipeline by connecting these jobs together. We would create a pipeline with</p>
+<pre><code>job1 =&gt; job2 =&gt; job3
+</code></pre>
+
+<p>Where, job2 should run, only if job1 is built successfully, and should trigger job3 once it builds itself successfully. We could either define both  connections from job2, or go to job1 and job3 and define its relationship with job2.  We would do the later.</p>
+<p>Lets open Job1 configurations and from <strong>Post Build Actions</strong> select <strong>Build Other Projects</strong> and select <strong>job2</strong>.</p>
+<p><img alt="Defining Downstream" src="../images/chap6/defining_downstream.jpg" /></p>
+<p>Lets also go to jobs3 and define a dependency on job2. To do so, you would have to scroll to <strong>Build Triggers</strong> section and select <strong>Build after other projects are built</strong> and provide job2.</p>
+<p><img alt="Defining Upstream" src="../images/chap6/defining_upstream.jpg" /></p>
+<h2 id="upstreams-and-downstreams">Upstreams and Downstreams</h2>
+<p>Jenkins calls these connections as <strong>Upstreams</strong> and <strong>Downstreams</strong>. In the context of job1, its downstream is job2. And for job2, job1 is its upstream. Same goes with job2 and job3.  This is depicted in the following image which shows the job2 configurations.</p>
+<p><img alt="Viewing Upstreams and Downstreams" src="../images/chap6/job2_updown.jpg" /></p>
+<h2 id="install-pipeline-plugin">Install Pipeline Plugin</h2>
+<p>To get a better view of the complete pipeline and the workflow, we would install a plugin which allows us to create a special view for connected jobs.</p>
+<p>To install this plugin,</p>
+<ul>
+<li>
+<p>From <strong>Manage Jenkins</strong> select <strong>Manage Plugins</strong>.</p>
+</li>
+<li>
+<p>Click on <strong>Available</strong> tab and start typing "pipeline" int he filter box. No need to press enter.</p>
+</li>
+<li>
+<p>Check the box against <strong>Build Pipeline Plugin</strong>, the second option, and click on the button at the bottom to "Download and install after restart".</p>
+</li>
+<li>
+<p>If you don't see this plugin in the <em>Available</em> list then check the <em>Installed</em> list to see if it is installed already.</p>
+</li>
+</ul>
+<p><img alt="Install Build Pipeline Plugin" src="../images/chap6/pipeline_plugin.jpg" /></p>
+<h2 id="crete-pipeline-view">Crete Pipeline View</h2>
+<p>Lets now create a pipeline view.</p>
+<ul>
+<li>From Jenkins dashboard click on the <strong>+</strong> symbol besides the current list view named <strong>ALL</strong> which displays all jobs.</li>
+</ul>
+<p><img alt="Add View" src="../images/chap6/add_view.jpg" /></p>
+<ul>
+<li>Provide a name to the view e.g. <strong>pipe1</strong>, check the radio button for <strong>Build Pipeline View</strong>. Click on ok.</li>
+</ul>
+<p><img alt="Pipe Line View" src="../images/chap6/pipe1.jpg" /></p>
+<ul>
+<li>From the view configurations, select initial job from the drop down menu and the number of displayed builds.  Click on OK to finish configurations and show the view.</li>
+</ul>
+<p><img alt="Add View" src="../images/chap6/pipe1_config.jpg" /></p>
+<h2 id="run-pipelines">Run pipelines</h2>
+<ul>
+<li>The pipeline view reads the first job, and picks up all the jobs which are directly or indirectly connected showing you one single view of the complete workflow and the order in which it is going to be executed.</li>
+</ul>
+<p><img alt="Run Pipeline" src="../images/chap6/run_pipe.jpg" /></p>
+<ul>
+<li>
+<p>Pipeline view also shows the history of job runs up to the number of instances you selected earlier in the configurations.</p>
+</li>
+<li>
+<p>Go trigger a <strong>Run</strong> from the pipeline view and see what happens. Make sure you have selected "ENABLE AUTO REFRESH" earlier from the top right corner of the screen.</p>
+</li>
+</ul>
+<hr />
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../070_frontend/" class="btn btn-neutral float-right" title="Build Pipeline For Front-End">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../050_jenkins_jobs/" class="btn btn-neutral" title="Jenkins Jobs"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../050_jenkins_jobs/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../070_frontend/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/require.js"></script>
+      <script src="../search/search.js"></script>
+
+</body>
+</html>

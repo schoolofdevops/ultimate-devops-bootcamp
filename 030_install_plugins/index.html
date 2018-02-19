@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Jenkins Global Security and Plugins Configurations - Ultimate Devops Bootcamp</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Jenkins Global Security and Plugins Configurations";
+    var mkdocs_page_input_path = "030_install_plugins.md";
+    var mkdocs_page_url = "/030_install_plugins/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Ultimate Devops Bootcamp</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../preface/">Outline</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../ansible/">Ansible</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">CI-CD</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../020_install_jenkins_jfrog_artifactory/">Setting up CI-CD Environment</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Jenkins Global Security and Plugins Configurations</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#jenkins-configurations">Jenkins configurations</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#getting-familiar-with-jenkins-console">Getting Familiar with Jenkins Console</a></li>
+        
+            <li><a class="toctree-l4" href="#configuring-global-security">Configuring Global Security</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l3"><a href="#jenkins-plugins">Jenkins Plugins</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#exploring-plugins-configurations">Exploring Plugins Configurations</a></li>
+        
+            <li><a class="toctree-l4" href="#installing-plugins">Installing Plugins</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../040_jenkins_config/">Jenkins Tools Configurations</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../050_jenkins_jobs/">Jenkins Jobs</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../060_building_jobs_pipeline/">Building a Pipeline</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../070_frontend/">Build Pipeline For Front-End</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../080_catalogue/">Build Pipeline For Catalogue</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../090_carts/">Build Pipeline For Carts</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Ultimate Devops Bootcamp</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>CI-CD &raquo;</li>
+        
+      
+    
+    <li>Jenkins Global Security and Plugins Configurations</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="jenkins-configurations">Jenkins configurations</h1>
+<h2 id="getting-familiar-with-jenkins-console">Getting Familiar with Jenkins Console</h2>
+<p>When you login to jenkins for the first time, following is the screen you would see.
+<img alt="Jenkins Welcome Screen" src="../images/configurations/jenkins_console.jpg" /></p>
+<ul>
+<li>On the left side of the screen, on top is the menu to  create new projects, to manage jenkins, to create users etc.</li>
+<li>Just below the menu is the build queue. All  jobs scheduled to run get added to the queue and would appear here.  </li>
+<li>Below build queue is the build executor status. This shows the status of the jobs being executed in real time.</li>
+<li>Bottom right of the page is the information about jenkins version displayed.</li>
+</ul>
+<h2 id="configuring-global-security">Configuring Global Security</h2>
+<ul>
+<li>Select  Manage Jenkins -&gt; Configure Global Security</li>
+<li>Verify</li>
+<li>checkbox for "Enable Security" is checked</li>
+<li>From Security Realm,  "Jenkins own database" is selected</li>
+<li>Authorization is set to "Logged in users can do anything"</li>
+</ul>
+<p>Observe the configs  and verify as per the screenshot attached below</p>
+<p><img alt="Configure Global Security" src="../images/configurations/default_sec_configs.png" /></p>
+<h1 id="jenkins-plugins">Jenkins Plugins</h1>
+<p>The real magic of Jenkins lies in its rich plugins eco system. This is how tools integrate with jenkins to build a CI workflow. You want to trigger jenkins jobs after every change going into git, you have a plugin for it. You want to send a notification to your developers on a successful or failed builds, you have a notification plugin. You want to use a tool to fetch or push the build artifacts, you have a plugin for it. This is how most of the tools talk to jenkins.</p>
+<p>In this tutorial, we are going to learn a simple process to install plugins. As part of this, we will end us installing a plugin which would help us integrate jenkins with our git repository.</p>
+<h3 id="exploring-plugins-configurations">Exploring Plugins Configurations</h3>
+<ul>
+<li>From "Manage Jenkins", select  "Manage Plugins" option.  </li>
+<li>On the Manage Plugins pane you would see the following tabs,</li>
+<li>Updates</li>
+<li>Available</li>
+<li>Installed</li>
+<li>Advanced
+ <img alt="Installed Plugins" src="../images/plugins/installed_plugins.jpg" /></li>
+</ul>
+<p>Select "Installed" to view the list of the plugins which came pre installed with jenkins.</p>
+<h2 id="installing-plugins">Installing Plugins</h2>
+<ul>
+<li>From "Manage Plugins", select <strong>Available</strong> tab.</li>
+<li>
+<p>On the top-right corner you should see a filter box, start typing the search term in that box. we will need below plugins to be installed for our CI-CD setup.</p>
+</li>
+<li>
+<p>Git Plugin
+  <img alt="git_plugin" src="../images/plugins/git_plugin.png" /></p>
+</li>
+<li>
+<p>Workspace Cleanup Plugin
+  <img alt="ws-ws_cleanup_plugin " src="../images/plugins/ws_cleanup_plugin.png" /></p>
+</li>
+<li>
+<p>Maven Plugin
+  <img alt="maven_plugin" src="../images/plugins/maven_plugin.png" /></p>
+</li>
+<li>
+<p>NodeJS Plugin
+  <img alt="nodejs_plugin" src="../images/plugins/nodejs_plugin.png" />  </p>
+</li>
+<li>
+<p>Go Plugin
+  <img alt="go_plugin" src="../images/plugins/go_plugin.png" /></p>
+</li>
+<li>
+<p>Git Tag Plugin
+  <img alt="git_tag_plugin" src="../images/plugins/git_tag_plugin.png" /></p>
+</li>
+<li>
+<p>Ssh Plugin
+  <img alt="ssh_plugin" src="../images/plugins/ssh_plugin.png" /></p>
+</li>
+<li>
+<p>Artifactory Plugin
+  <img alt="artifactory_plugin" src="../images/plugins/artifactory_plugin.png" /></p>
+</li>
+</ul>
+<hr />
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../040_jenkins_config/" class="btn btn-neutral float-right" title="Jenkins Tools Configurations">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../020_install_jenkins_jfrog_artifactory/" class="btn btn-neutral" title="Setting up CI-CD Environment"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../020_install_jenkins_jfrog_artifactory/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../040_jenkins_config/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/require.js"></script>
+      <script src="../search/search.js"></script>
+
+</body>
+</html>

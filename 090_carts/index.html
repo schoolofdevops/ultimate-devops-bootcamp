@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Build Pipeline For Carts - Ultimate Devops Bootcamp</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Build Pipeline For Carts";
+    var mkdocs_page_input_path = "090_carts.md";
+    var mkdocs_page_url = "/090_carts/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Ultimate Devops Bootcamp</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../preface/">Outline</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../ansible/">Ansible</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">CI-CD</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../020_install_jenkins_jfrog_artifactory/">Setting up CI-CD Environment</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../030_install_plugins/">Jenkins Global Security and Plugins Configurations</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../040_jenkins_config/">Jenkins Tools Configurations</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../050_jenkins_jobs/">Jenkins Jobs</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../060_building_jobs_pipeline/">Building a Pipeline</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../070_frontend/">Build Pipeline For Front-End</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../080_catalogue/">Build Pipeline For Catalogue</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Build Pipeline For Carts</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#build-pipeline-for-cart">Build Pipeline for Cart</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#job-1-unit-testing">Job 1 (Unit testing)</a></li>
+        
+            <li><a class="toctree-l4" href="#job-2-component-testing">Job 2 (Component Testing)</a></li>
+        
+            <li><a class="toctree-l4" href="#job-3-packages">Job 3 (Packages)</a></li>
+        
+            <li><a class="toctree-l4" href="#artifactory-">ARTIFACTORY :-</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Ultimate Devops Bootcamp</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>CI-CD &raquo;</li>
+        
+      
+    
+    <li>Build Pipeline For Carts</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="build-pipeline-for-cart">Build Pipeline for Cart</h1>
+<p>Pipeline for the Cart contains three jobs</p>
+<ul>
+<li>Unit Testing. </li>
+<li>Component Testing</li>
+<li>Packages</li>
+</ul>
+<p>![BUILD PIPELINE](images/pipeline/BUILD PIPELINE.png)</p>
+<h2 id="job-1-unit-testing">Job 1 (Unit testing)</h2>
+<p>Jenkins provides an out of box functionality for Junit, and provides a host of plugins for unit testing for other technologies. Unit tests verify that a small block of code behaves as expected under a well-defined set of external conditions. Unit tests aim to isolate the code under test.
+  Once the Unit testing is successful it goes to next job called <em>Component testing</em></p>
+<p>![Unit Testing](images/Job1/Unit test.png)</p>
+<h3 id="general">General</h3>
+<p>The source Code of this project will be available on the github.com.</p>
+<p>Project url:</p>
+<pre><code>  https://github.com/udbc/carts.git/
+</code></pre>
+<p><img alt="General" src="../images/Job1/General.png" /></p>
+<h3 id="source-code-management">Source Code Management</h3>
+<p>To get the information related source code management click on the <strong>unit_test_carts</strong> and the click on <strong>configure</strong></p>
+<p>In Source Code Management we select the option <strong>NONE</strong>.</p>
+<p>In <strong>BUILD TRIGGERS</strong> we select the option <strong>GitHub hook trigger for GITScm polling</strong> . This option states that whatever is triggered or pushed to the master i.e. github.com will immediately known by the jenkins server .</p>
+<p><img alt="SCM" src="../images/Job1/SCM.png" /></p>
+<h3 id="build-enviornment">Build Enviornment</h3>
+<p>Once the Jenkins server gets triggered it starts building the environment. It deletes the workspace before building the environment.</p>
+<p><img alt="BE" src="../images/Job1/BE.png" /></p>
+<h3 id="build">Build</h3>
+<p>In this we are actually <strong>cloning</strong> are project and <strong>running</strong> the unit test module.</p>
+<p><img alt="Build" src="../images/Job1/Build1.png" /></p>
+<h2 id="job-2-component-testing">Job 2 (Component Testing)</h2>
+<p>Integration tests exercise the interactions between different components of a system. Once the component test is passed successfully it move to <em>Packages</em></p>
+<p>![Component testing](images/Job2/Component test.png)</p>
+<h3 id="source-code-management_1">Source Code Management</h3>
+<p>To get the information related source code management click on the <strong>component_test_carts</strong> and the click on <strong>configure</strong></p>
+<p>In Source Code Management we select the option <strong>NONE</strong>.</p>
+<p>In <strong>BUILD TRIGGERS</strong> we select the option <strong>Build after other projects are built</strong> . This option states that once the <strong>unit_test_cart</strong> is successfully done then only it can start the component testing.</p>
+<p><img alt="SCM" src="../images/Job2/scmcomponent.png" /></p>
+<h3 id="build-enviornment_1">Build Enviornment</h3>
+<p>Once the Jenkins server gets triggered it starts building the environment.</p>
+<p><img alt="BE" src="../images/Job2/buildcomponent.png" /></p>
+<h3 id="build_1">Build</h3>
+<p>In this we are actually <strong>cloning</strong> are project and <strong>running</strong> the component test module.</p>
+<p><img alt="Build Component" src="../images/Job2/BUILDCOMPO.png" /></p>
+<h3 id="post-build-action">Post-build Action</h3>
+<p>If the <strong>unit test</strong> and <strong>component test</strong> is successfully done then only it is triggered to the package build.</p>
+<p>![Post](images/Job2/post component.png)</p>
+<h2 id="job-3-packages">Job 3 (Packages)</h2>
+<p>Once the Component test is passed it goes into the packages stage. The aim of packages is to depoly it to Artifactory.</p>
+<p><img alt="Packages" src="../images/Job3/packages.png" /></p>
+<h3 id="source-code-management_2">Source Code Management</h3>
+<p>To get the information related source code management click on the <strong>package_carts</strong> and the click on <strong>configure</strong></p>
+<p>In Source Code Management we select the option <strong>Git</strong>. It states the are repository is present on github.com</p>
+<p>Repository url:-</p>
+<pre><code>https://github.com/udbc/carts.git
+</code></pre>
+<p><img alt="SCM" src="../images/Job3/scmpackage.png" /></p>
+<p>In <strong>BUILD TRIGGERS</strong> we select the option <strong>GitHub hook trigger for GITScm polling</strong>. This option states that whatever is triggered or pushed to the master i.e. github.com will immediately known by the jenkins server .</p>
+<p><img alt="SCM" src="../images/Job3/BTpackage.png" /></p>
+<h3 id="build_2">Build</h3>
+<p>TO build it successfully we have a file called <strong>pom.xml</strong> in which the source is present. The main goal is to <em>clean the compine package</em> and to <em>skip the testing part</em>.</p>
+<p><img alt="Build Package" src="../images/Job3/Buildpackage.png" /></p>
+<h3 id="post-build-actions">Post-build Actions</h3>
+<p>This is the section where everything build earlier i.e. <strong>unit_test_cart</strong> and <strong>component_test_carts</strong> artifacts are deployed to the <strong>Artifactory</strong>. Here we need to define the <em>target release</em> and <em>target snapshot</em> needed for the Artifactory.</p>
+<p>![PBA](images/Job3/PBA PACKAGE.png)</p>
+<h2 id="artifactory-">ARTIFACTORY :-</h2>
+<p>This is where you will be able to see that the cart module have been deployed to the <strong>Artifactory</strong>.</p>
+<p><img alt="Artifactory" src="../images/ART/artifactory.png" /></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../080_catalogue/" class="btn btn-neutral" title="Build Pipeline For Catalogue"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../080_catalogue/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/require.js"></script>
+      <script src="../search/search.js"></script>
+
+</body>
+</html>

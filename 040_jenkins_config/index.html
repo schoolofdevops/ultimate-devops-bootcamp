@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Outline - Ultimate Devops Bootcamp</title>
+  <title>Jenkins Tools Configurations - Ultimate Devops Bootcamp</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
@@ -17,9 +17,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Outline";
-    var mkdocs_page_input_path = "preface.md";
-    var mkdocs_page_url = "/preface/";
+    var mkdocs_page_name = "Jenkins Tools Configurations";
+    var mkdocs_page_input_path = "040_jenkins_config.md";
+    var mkdocs_page_url = "/040_jenkins_config/";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js"></script>
@@ -52,21 +52,9 @@
     <a class="" href="..">Home</a>
 	    </li>
           
-            <li class="toctree-l1 current">
+            <li class="toctree-l1">
 		
-    <a class="current" href="./">Outline</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l2"><a href="#preface">Preface</a></li>
-    
-        <ul>
-        
-            <li><a class="toctree-l3" href="#course-outline">Course Outline</a></li>
-        
-        </ul>
-    
-
-    </ul>
+    <a class="" href="../preface/">Outline</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -86,9 +74,29 @@
                     
     <a class="" href="../030_install_plugins/">Jenkins Global Security and Plugins Configurations</a>
                 </li>
-                <li class="">
+                <li class=" current">
                     
-    <a class="" href="../040_jenkins_config/">Jenkins Tools Configurations</a>
+    <a class="current" href="./">Jenkins Tools Configurations</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#jenkins-tools-configurations">Jenkins Tools configurations</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#configuring-maven">Configuring Maven</a></li>
+        
+            <li><a class="toctree-l4" href="#configuring-nodejs">Configuring NodeJS</a></li>
+        
+            <li><a class="toctree-l4" href="#configuring-go">Configuring Go</a></li>
+        
+            <li><a class="toctree-l4" href="#configuring-ssh-for-remote-host">Configuring SSH for remote host</a></li>
+        
+            <li><a class="toctree-l4" href="#configuring-artifactory">Configuring Artifactory</a></li>
+        
+        </ul>
+    
+
+    </ul>
                 </li>
                 <li class="">
                     
@@ -134,8 +142,12 @@
     <li><a href="..">Docs</a> &raquo;</li>
     
       
+        
+          <li>CI-CD &raquo;</li>
+        
+      
     
-    <li>Outline</li>
+    <li>Jenkins Tools Configurations</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -145,171 +157,50 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="preface">Preface</h1>
-<p>This is an example of "frontmatter", which comes before the main text of the book.</p>
-<h2 id="course-outline">Course Outline</h2>
-<p>Chapter 01: Codifying Devops</p>
+                <h1 id="jenkins-tools-configurations">Jenkins Tools configurations</h1>
+<p>Once you installed all plugins, we can go ahead to make required changes in configurations.</p>
+<p><img alt="Configure Global Security" src="../images/configurations/jenkins_config.png" /></p>
+<p><img alt="Configure Global Security" src="../images/configurations/config_tools.png" /></p>
+<h2 id="configuring-maven">Configuring Maven</h2>
 <ul>
-<li>Why Devops  </li>
-<li>History    </li>
-<li>Principles and Practices  </li>
+<li>Go to section Maven</li>
+<li>Provide name for maven installation</li>
+<li>Select check box to install it automatically and select version to be installed.
+<img alt="Configure Global Security" src="../images/configurations/maven_config.png" /></li>
 </ul>
-<p>Chapter 02: Use Case Workshop</p>
+<h2 id="configuring-nodejs">Configuring NodeJS</h2>
 <ul>
-<li>Description of Use Case</li>
-<li>Organization Goals</li>
-<li>Pain Points</li>
-<li>Diagnosing the issues</li>
-<li>Solution Design</li>
+<li>Go to section NodeJS</li>
+<li>Provide name for nodejs installation</li>
+<li>Select check box to install it automatically and select version to be installed.</li>
+<li>You can provide names to install global modules, which very common for all services.
+<img alt="Configure Global Security" src="../images/configurations/nodejs_config.png" /></li>
 </ul>
-<p>Chapter 03: Git quick dive</p>
+<h2 id="configuring-go">Configuring Go</h2>
 <ul>
-<li>Git and Distributed Revision Control</li>
-<li>Repos</li>
-<li>Branching and Merging</li>
-<li>Github</li>
-<li>Branching Strategy</li>
-<li>Git References</li>
-<li>Lab<ul>
-<li>Setting up repos</li>
-<li>Create a devops repo  </li>
+<li>Go to section Go</li>
+<li>Provide name for go installation</li>
+<li>Select check box to install it automatically and select version to be installed.
+<img alt="Configure Global Security" src="../images/configurations/go_config.png" /></li>
 </ul>
-</li>
-</ul>
-<p>Chapter 04: Ansible quick dive</p>
+<h2 id="configuring-ssh-for-remote-host">Configuring SSH for remote host</h2>
 <ul>
-<li>Why Ansible</li>
-<li>IaaC</li>
-<li>Convergence</li>
-<li>Idempotence</li>
-<li>Ansible Concepts<ul>
-<li>Inventory</li>
-<li>Playbooks</li>
-<li>Roles</li>
-<li>Modules</li>
-<li>Vars/Templates</li>
+<li>Go to section SSH remote hosts in <strong>Configure Systems</strong> setting.</li>
+<li>Provide host name for hosts to ssh.</li>
+<li>Select ssh port 22.</li>
+<li>We need to provide credentials for same. We can create credentials in <strong>Configure Credentials</strong> menu.</li>
+<li>Select check box to install it automatically and select version to be installed.
+<img alt="Configure Global Security" src="../images/configurations/ssh_config.png" /></li>
 </ul>
-</li>
-</ul>
-<p>Chapter 05: Creating Ansible code for Demo App</p>
+<h2 id="configuring-artifactory">Configuring Artifactory</h2>
 <ul>
-<li>Playbooks for<ul>
-<li>System Configurations</li>
-<li>Application Configurations</li>
-<li>Deployment</li>
+<li>Provide the server id for Artifactory server.</li>
+<li>Provide URL of Artifactory server.</li>
+<li>Provide default credentials for Artifactory.</li>
+<li>once you added credentials check the connectivity, it will provide Artifactory version <em>(e.g 5.8.4)</em>
+<img alt="Configure Global Security" src="../images/configurations/artifactory_config.png" /></li>
 </ul>
-</li>
-<li>Additional Code for Provisioning Automation</li>
-</ul>
-<p>Chapter 06: Provisioning Automation</p>
-<ul>
-<li>Vagrant</li>
-<li>Labs:<ul>
-<li>Create dev env</li>
-<li>Integrate with Ansible</li>
-</ul>
-</li>
-</ul>
-<p>Chapter 07: Continous Integration</p>
-<ul>
-<li>Theory</li>
-</ul>
-<p>Chapter 08: Setting up a CI Pipeline with Jenkins</p>
-<ul>
-<li>Setup Jenkins</li>
-<li>Commit Stage Jobs<ul>
-<li>build/compile</li>
-<li>unit test</li>
-<li>static code analysis</li>
-</ul>
-</li>
-<li>Artifacts Management</li>
-<li>Functional Acceptance Testing</li>
-<li>Deploy to Staging</li>
-<li>NFR Testing</li>
-</ul>
-<p>Chapter 09: Cloud and AWS* Cloud and Devop</p>
-<ul>
-<li>AWS</li>
-</ul>
-<p>Chapter 10: Deploy a prod Environment on AWS</p>
-<ul>
-<li>Design considerations<ul>
-<li>Availability</li>
-<li>Scalability</li>
-<li>Manageability</li>
-<li>Security  </li>
-</ul>
-</li>
-<li>Deploy to prod, integrate with Jenkins</li>
-</ul>
-<p>Chapter 11: Containers and Docker</p>
-<ul>
-<li>Advantages of using containers<ul>
-<li>Portability</li>
-<li>Consistency</li>
-<li>Density</li>
-<li>Eco System</li>
-<li>Speed</li>
-</ul>
-</li>
-<li>Docker quick dive<ul>
-<li>Running Containers</li>
-<li>Operating Containers</li>
-<li>Port Mapping</li>
-<li>Building Docker Images</li>
-</ul>
-</li>
-</ul>
-<p>Chapter 12:  Dockerizing App Stack</p>
-<ul>
-<li>Build Dockerfiles</li>
-<li>Create Docker Compose specs</li>
-</ul>
-<p>Chapter 13: Kubernetes: Taking Containers to Production</p>
-<ul>
-<li>COEs and intro to k8s</li>
-<li>k8s Quick Dive<ul>
-<li>Pods</li>
-<li>deployments</li>
-<li>services</li>
-<li>Ingress</li>
-<li>rollouts</li>
-</ul>
-</li>
-</ul>
-<p>Chapter 14: Deploying Demo app in Production</p>
-<ul>
-<li>Deploy k8s Cluster /Minikube</li>
-<li>Create k8s objects<ul>
-<li>deployment</li>
-<li>service</li>
-<li>ingress</li>
-</ul>
-</li>
-<li>Release Management<ul>
-<li>Zero Downtime</li>
-<li>Blue Green</li>
-<li>Canary</li>
-</ul>
-</li>
-</ul>
-<p>Chapter  15: Monitoring</p>
-<ul>
-<li>Why Monitoring ?</li>
-<li>What to monitor<ul>
-<li>Logs</li>
-<li>APM</li>
-<li>Health</li>
-</ul>
-</li>
-<li>Labs:<ul>
-<li>Setup log monitoring</li>
-<li>Setup performance monitoring</li>
-<li>Health Monitoring and Alerting</li>
-</ul>
-</li>
-</ul>
+<hr />
               
             </div>
           </div>
@@ -317,10 +208,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../ansible/" class="btn btn-neutral float-right" title="Ansible">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../050_jenkins_jobs/" class="btn btn-neutral float-right" title="Jenkins Jobs">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href=".." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../030_install_plugins/" class="btn btn-neutral" title="Jenkins Global Security and Plugins Configurations"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -346,10 +237,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../030_install_plugins/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../ansible/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../050_jenkins_jobs/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

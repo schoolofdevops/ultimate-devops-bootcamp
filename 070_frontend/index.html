@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Build Pipeline For Front-End - Ultimate Devops Bootcamp</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Build Pipeline For Front-End";
+    var mkdocs_page_input_path = "070_frontend.md";
+    var mkdocs_page_url = "/070_frontend/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Ultimate Devops Bootcamp</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../preface/">Outline</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../ansible/">Ansible</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">CI-CD</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../020_install_jenkins_jfrog_artifactory/">Setting up CI-CD Environment</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../030_install_plugins/">Jenkins Global Security and Plugins Configurations</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../040_jenkins_config/">Jenkins Tools Configurations</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../050_jenkins_jobs/">Jenkins Jobs</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../060_building_jobs_pipeline/">Building a Pipeline</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Build Pipeline For Front-End</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#build-pipeline-for-front-end">Build pipeline for Front End</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#job-1-unit-testing">Job 1 (Unit Testing)</a></li>
+        
+            <li><a class="toctree-l4" href="#job-2-packaging">Job 2 (Packaging)</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../080_catalogue/">Build Pipeline For Catalogue</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../090_carts/">Build Pipeline For Carts</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Ultimate Devops Bootcamp</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>CI-CD &raquo;</li>
+        
+      
+    
+    <li>Build Pipeline For Front-End</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="build-pipeline-for-front-end">Build pipeline for Front End</h1>
+<p>Front End pipeline contains two jobs.</p>
+<ul>
+<li>Unit Testing</li>
+<li>Packaging</li>
+</ul>
+<p><img alt="Build_Pipeline" src="../images/frontend/Build_Pipeline.png" /></p>
+<h2 id="job-1-unit-testing">Job 1 (Unit Testing)</h2>
+<p>The purpose is to validate that each unit of the software performs as designed. unit testing successfully completed, Then the next step is packaging. Suppose unit testing failed, he doesn't perform packaging.</p>
+<p><img alt="Unit_Test" src="../images/frontend/unit_test.png" /></p>
+<h4 id="source-code-management">Source Code Management</h4>
+<p>The Source Code is available at the github.com.
+You need to clone it by following url</p>
+<pre><code>https://github.com/microservices-demo/front-end.git
+</code></pre>
+<p>In Build Trigger we have select GitHub hook trigger for GITScm polling.</p>
+<p>Whatever is pushed to master i.e. github.com will immediately known by the  <strong>Jenkins server</strong>.</p>
+<p><img alt="Source_Code_Management" src="../images/frontend/sourcecode.png" /></p>
+<p><img alt="Build_Trigger" src="../images/frontend/Build_Trigger.png" /></p>
+<h4 id="build-environment">Build Environment</h4>
+<p>To Build the environment we required <strong>NodeJS</strong></p>
+<p><img alt="Build Environment" src="../images/frontend/Build_Environment.png" /></p>
+<h4 id="build">Build</h4>
+<p>To Build the Environment we need to install the <strong>npm</strong> you can install it by following Command.   </p>
+<p><img alt="Build Environment" src="../images/frontend/Build.png" /></p>
+<h2 id="job-2-packaging">Job 2 (Packaging)</h2>
+<p>After the successful completion of validation then we go for packaging. After packaging we deploy the package to Artifactory.</p>
+<p><img alt="Packaging" src="../images/frontend/Package.png" /></p>
+<h3 id="source-code-management_1">Source Code Management</h3>
+<p>The Source Code is available at the github.com.
+You need to clone it by following url</p>
+<pre><code>https://github.com/udbc/front-end.git/
+</code></pre>
+<p>Once the unit test successfully completed then packages are Triggered.</p>
+<p><img alt="Source_Code_Management" src="../images/frontend/sourcecode_package.png" /></p>
+<p><img alt="Build_Trigger" src="../images/frontend/Build_Trigger_package.png" /></p>
+<h3 id="build-environment_1">Build Environment</h3>
+<p>Before starting to build the environment we Delete workspace.</p>
+<p><img alt="Build_Environment" src="../images/frontend/Build_Environment_package.png" /></p>
+<h3 id="artifactory-configuration">Artifactory Configuration</h3>
+<p>Once the Unit test and Package are completed the we deploy these artifacts to Artifactory.</p>
+<p><img alt="Artifactory_Configuration" src="../images/frontend/Artifactory_Configuration.png" /></p>
+<p>To download the Artifactory use the following url</p>
+<pre><code>http://188.166.236.188.9081/artifactory
+</code></pre>
+<p><img alt="Artifactory_Download" src="../images/frontend/Artifactory_Download.png" /></p>
+<h4 id="build_1">Build</h4>
+<p>To Build the Environment we need to install the <strong>npm</strong> you can install it by following Command.   </p>
+<p><img alt="Build Environment" src="../images/frontend/Build_package.png" /></p>
+<h3 id="artifactory">Artifactory</h3>
+<p>Once everything is done then the packages are deploy to Artifactory.
+<img alt="artifactory" src="../images/frontend/artifactory.png" /></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../080_catalogue/" class="btn btn-neutral float-right" title="Build Pipeline For Catalogue">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../060_building_jobs_pipeline/" class="btn btn-neutral" title="Building a Pipeline"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../060_building_jobs_pipeline/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../080_catalogue/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/require.js"></script>
+      <script src="../search/search.js"></script>
+
+</body>
+</html>

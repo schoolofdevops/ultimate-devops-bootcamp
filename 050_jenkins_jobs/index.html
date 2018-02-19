@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Outline - Ultimate Devops Bootcamp</title>
+  <title>Jenkins Jobs - Ultimate Devops Bootcamp</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
@@ -17,9 +17,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Outline";
-    var mkdocs_page_input_path = "preface.md";
-    var mkdocs_page_url = "/preface/";
+    var mkdocs_page_name = "Jenkins Jobs";
+    var mkdocs_page_input_path = "050_jenkins_jobs.md";
+    var mkdocs_page_url = "/050_jenkins_jobs/";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js"></script>
@@ -52,21 +52,9 @@
     <a class="" href="..">Home</a>
 	    </li>
           
-            <li class="toctree-l1 current">
+            <li class="toctree-l1">
 		
-    <a class="current" href="./">Outline</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l2"><a href="#preface">Preface</a></li>
-    
-        <ul>
-        
-            <li><a class="toctree-l3" href="#course-outline">Course Outline</a></li>
-        
-        </ul>
-    
-
-    </ul>
+    <a class="" href="../preface/">Outline</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -90,9 +78,27 @@
                     
     <a class="" href="../040_jenkins_config/">Jenkins Tools Configurations</a>
                 </li>
-                <li class="">
+                <li class=" current">
                     
-    <a class="" href="../050_jenkins_jobs/">Jenkins Jobs</a>
+    <a class="current" href="./">Jenkins Jobs</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#creating-first-project">Creating First Project</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#types-of-jobs">Types of Jobs</a></li>
+        
+            <li><a class="toctree-l4" href="#jenkins-jobs-anatomy">Jenkins Jobs Anatomy</a></li>
+        
+            <li><a class="toctree-l4" href="#creating-a-simple-job">Creating a Simple Job</a></li>
+        
+            <li><a class="toctree-l4" href="#building-job-for-the-first-time">Building Job for the First Time</a></li>
+        
+        </ul>
+    
+
+    </ul>
                 </li>
                 <li class="">
                     
@@ -134,8 +140,12 @@
     <li><a href="..">Docs</a> &raquo;</li>
     
       
+        
+          <li>CI-CD &raquo;</li>
+        
+      
     
-    <li>Outline</li>
+    <li>Jenkins Jobs</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -145,171 +155,60 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="preface">Preface</h1>
-<p>This is an example of "frontmatter", which comes before the main text of the book.</p>
-<h2 id="course-outline">Course Outline</h2>
-<p>Chapter 01: Codifying Devops</p>
+                <h1 id="creating-first-project">Creating First Project</h1>
+<p>In this session we are going to create and launch our first project  with jenkins. We will be using a free style project for this example.</p>
+<h2 id="types-of-jobs">Types of Jobs</h2>
+<p>With Jenkins you could create following kind of projects or jobs.</p>
 <ul>
-<li>Why Devops  </li>
-<li>History    </li>
-<li>Principles and Practices  </li>
+<li>Free Style</li>
+<li>Maven</li>
+<li>External Job</li>
+<li>Multi Configuration</li>
 </ul>
-<p>Chapter 02: Use Case Workshop</p>
+<h2 id="jenkins-jobs-anatomy">Jenkins Jobs Anatomy</h2>
+<p>A typical style jenkins jobs has the following sections.</p>
+<p><img alt="Anatomy of a Jenkins Job" src="../images/chap4/jenkins_job_anatomy.png" /></p>
 <ul>
-<li>Description of Use Case</li>
-<li>Organization Goals</li>
-<li>Pain Points</li>
-<li>Diagnosing the issues</li>
-<li>Solution Design</li>
+<li>Name/description</li>
+<li>Advanced Option</li>
+<li>Source Code Management</li>
+<li>Build Triggers</li>
+<li>Pre Build</li>
+<li>Build</li>
+<li>Post Build</li>
 </ul>
-<p>Chapter 03: Git quick dive</p>
-<ul>
-<li>Git and Distributed Revision Control</li>
-<li>Repos</li>
-<li>Branching and Merging</li>
-<li>Github</li>
-<li>Branching Strategy</li>
-<li>Git References</li>
-<li>Lab<ul>
-<li>Setting up repos</li>
-<li>Create a devops repo  </li>
-</ul>
+<h2 id="creating-a-simple-job">Creating a Simple Job</h2>
+<p>Lets now create a simple job using jenkins to run a hello world program.</p>
+<ol>
+<li>From Jenkins Main page, click on <strong>New Item</strong>.
+    <img alt="New Job" src="../images/chap4/new_item.jpg" />  </li>
+<li>Provide a name to the project in Item Name i.e. "job1". Check against Free Style Project.
+    <img alt=" Naming Jenkins Job " src="../images/chap4/job_name.jpg" /></li>
+</ol>
+<p>Next screen opens the job configuration page. On the job configuration page,</p>
+<ol>
+<li>
+<p>Add job description. e.g., "Our first Jenkins Job".</p>
 </li>
-</ul>
-<p>Chapter 04: Ansible quick dive</p>
-<ul>
-<li>Why Ansible</li>
-<li>IaaC</li>
-<li>Convergence</li>
-<li>Idempotence</li>
-<li>Ansible Concepts<ul>
-<li>Inventory</li>
-<li>Playbooks</li>
-<li>Roles</li>
-<li>Modules</li>
-<li>Vars/Templates</li>
-</ul>
+<li>
+<p>Skip Source Code Management and Build Triggers, and scroll down to <strong>Build</strong> configurations.</p>
 </li>
-</ul>
-<p>Chapter 05: Creating Ansible code for Demo App</p>
-<ul>
-<li>Playbooks for<ul>
-<li>System Configurations</li>
-<li>Application Configurations</li>
-<li>Deployment</li>
-</ul>
+<li>
+<p>From "Add Build Step" select <strong>Execute Shell</strong> and provide commands to execute. Since this  is a  mock job, you could provide following sample code,</p>
 </li>
-<li>Additional Code for Provisioning Automation</li>
-</ul>
-<p>Chapter 06: Provisioning Automation</p>
-<ul>
-<li>Vagrant</li>
-<li>Labs:<ul>
-<li>Create dev env</li>
-<li>Integrate with Ansible</li>
-</ul>
-</li>
-</ul>
-<p>Chapter 07: Continous Integration</p>
-<ul>
-<li>Theory</li>
-</ul>
-<p>Chapter 08: Setting up a CI Pipeline with Jenkins</p>
-<ul>
-<li>Setup Jenkins</li>
-<li>Commit Stage Jobs<ul>
-<li>build/compile</li>
-<li>unit test</li>
-<li>static code analysis</li>
-</ul>
-</li>
-<li>Artifacts Management</li>
-<li>Functional Acceptance Testing</li>
-<li>Deploy to Staging</li>
-<li>NFR Testing</li>
-</ul>
-<p>Chapter 09: Cloud and AWS* Cloud and Devop</p>
-<ul>
-<li>AWS</li>
-</ul>
-<p>Chapter 10: Deploy a prod Environment on AWS</p>
-<ul>
-<li>Design considerations<ul>
-<li>Availability</li>
-<li>Scalability</li>
-<li>Manageability</li>
-<li>Security  </li>
-</ul>
-</li>
-<li>Deploy to prod, integrate with Jenkins</li>
-</ul>
-<p>Chapter 11: Containers and Docker</p>
-<ul>
-<li>Advantages of using containers<ul>
-<li>Portability</li>
-<li>Consistency</li>
-<li>Density</li>
-<li>Eco System</li>
-<li>Speed</li>
-</ul>
-</li>
-<li>Docker quick dive<ul>
-<li>Running Containers</li>
-<li>Operating Containers</li>
-<li>Port Mapping</li>
-<li>Building Docker Images</li>
-</ul>
-</li>
-</ul>
-<p>Chapter 12:  Dockerizing App Stack</p>
-<ul>
-<li>Build Dockerfiles</li>
-<li>Create Docker Compose specs</li>
-</ul>
-<p>Chapter 13: Kubernetes: Taking Containers to Production</p>
-<ul>
-<li>COEs and intro to k8s</li>
-<li>k8s Quick Dive<ul>
-<li>Pods</li>
-<li>deployments</li>
-<li>services</li>
-<li>Ingress</li>
-<li>rollouts</li>
-</ul>
-</li>
-</ul>
-<p>Chapter 14: Deploying Demo app in Production</p>
-<ul>
-<li>Deploy k8s Cluster /Minikube</li>
-<li>Create k8s objects<ul>
-<li>deployment</li>
-<li>service</li>
-<li>ingress</li>
-</ul>
-</li>
-<li>Release Management<ul>
-<li>Zero Downtime</li>
-<li>Blue Green</li>
-<li>Canary</li>
-</ul>
-</li>
-</ul>
-<p>Chapter  15: Monitoring</p>
-<ul>
-<li>Why Monitoring ?</li>
-<li>What to monitor<ul>
-<li>Logs</li>
-<li>APM</li>
-<li>Health</li>
-</ul>
-</li>
-<li>Labs:<ul>
-<li>Setup log monitoring</li>
-<li>Setup performance monitoring</li>
-<li>Health Monitoring and Alerting</li>
-</ul>
-</li>
-</ul>
+</ol>
+<pre><code>#!/bin/bash
+echo &quot;Hello World !&quot;
+sleep 10
+</code></pre>
+
+<p>Review and click on save to go to project page.</p>
+<p><img alt="Project Page" src="../images/chap4/project_page.jpg" /></p>
+<h2 id="building-job-for-the-first-time">Building Job for the First Time</h2>
+<p>Click on <strong>Build Now</strong> to launch a build. Once the build is started, you would see the status in the <strong>Build History</strong> section.</p>
+<p>Once build is finished, click on the build number which starts with # . Clicking on the build number e.g. <strong>#1</strong> will take you to the page which shows the build stats. Option of interest on this page might be <strong>Console Status</strong> which shows the run time output.</p>
+<p><img alt="Console Output" src="../images/chap4/console_output.jpg" /></p>
+<hr />
               
             </div>
           </div>
@@ -317,10 +216,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../ansible/" class="btn btn-neutral float-right" title="Ansible">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../060_building_jobs_pipeline/" class="btn btn-neutral float-right" title="Building a Pipeline">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href=".." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../040_jenkins_config/" class="btn btn-neutral" title="Jenkins Tools Configurations"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -346,10 +245,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../040_jenkins_config/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../ansible/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../060_building_jobs_pipeline/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
