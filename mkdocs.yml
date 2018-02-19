@@ -3,5 +3,6 @@ pages:
   - Home: index.md
   - Outline : preface.md
   - Ansible: ansible.md
+  - CI-CD: ci_cd_setup.md  
 docs_dir: chapters
 theme: readthedocs
