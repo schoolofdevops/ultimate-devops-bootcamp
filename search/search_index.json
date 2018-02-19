@@ -34,6 +34,21 @@
             "location": "/ansible/", 
             "text": "ansible-galaxy install  -p roles geerlingguy.mysql", 
             "title": "Ansible"
+        }, 
+        {
+            "location": "/ci_cd_setup/", 
+            "text": "CI-CD Setup with Jenkins and JFrog Artifactory\n\n\n\n\nChapter 1: Setting up CI-CD Environment \n  \n\n\nChapter 2: Jenkins Global Security and Plugins Configurations \n\n\nChapter 3: Jenkins Tools Configurations \n\n\nChapter 4: Jenkins Jobs \n\n\nChapter 5: Building a Pipeline \n\n\nChapter 6: Build Pipeline For Front-End \n\n\nChapter 7: Build Pipeline For Catalogue  \n\n\nChapter 8: Build Pipeline For Carts \n\n\n\n\nLicense (CC-BY-NC-ND)\n\n\nCI-CD Setup\n by \nSchool of Devops\n is licensed under a \nCreative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License\n.", 
+            "title": "CI-CD"
+        }, 
+        {
+            "location": "/ci_cd_setup/#ci-cd-setup-with-jenkins-and-jfrog-artifactory", 
+            "text": "Chapter 1: Setting up CI-CD Environment      Chapter 2: Jenkins Global Security and Plugins Configurations   Chapter 3: Jenkins Tools Configurations   Chapter 4: Jenkins Jobs   Chapter 5: Building a Pipeline   Chapter 6: Build Pipeline For Front-End   Chapter 7: Build Pipeline For Catalogue    Chapter 8: Build Pipeline For Carts", 
+            "title": "CI-CD Setup with Jenkins and JFrog Artifactory"
+        }, 
+        {
+            "location": "/ci_cd_setup/#license-cc-by-nc-nd", 
+            "text": "CI-CD Setup  by  School of Devops  is licensed under a  Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License .", 
+            "title": "License (CC-BY-NC-ND)"
         }
     ]
 }
