@@ -11,7 +11,7 @@ Front End pipeline contains two jobs.
 
 The purpose is to validate that each unit of the software performs as designed. unit testing successfully completed, Then the next step is packaging. Suppose unit testing failed, he doesn't perform packaging.
 
-![Unit_Test](images/frontend/unit_test.png)
+![Unit_Test](images/frontend/Unit_Test.png)
 
 #### Source Code Management
 The Source Code is available at the github.com.
@@ -74,7 +74,7 @@ To download the Artifactory use the following url
 #### Build
 To Build the Environment we need to install the **npm** you can install it by following Command.   
 
-![Build Environment](images/frontend/Build_package.png)
+![Build Environment](images/frontend/Build_Package.png)
 
 ### Artifactory
 
