@@ -33,7 +33,7 @@ In source code management we select option **None**
 
 In **BUILD TRIGGERS** we select the option **Github hook trigger for GITScm polling** . This option states that whatever is triggered or pushed to master i.e.  github.com will immediately know by the jenkins server .
  
-![Build_Pipeline](images/catalogue/build_triggers.png)
+![Build_Pipeline](images/catalogue/Build_triggers.png)
 
 ### Build
 
@@ -51,7 +51,7 @@ In **Build** Execute shell script on remote host using **ssh**
 	gvt restore
 
 	
-![Build_Pipeline](images/catalogue/build.png)
+![Build_Pipeline](images/catalogue/Build.png)
 
 ### Post Build Actions
 If unit test build successfully completed. Its trigger to the package build. suppose unit test build failed. it doesn't trigger package build.
