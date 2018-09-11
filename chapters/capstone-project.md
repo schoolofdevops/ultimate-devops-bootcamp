@@ -131,6 +131,8 @@ Robot Shop
 #### Step 7:  
 Create a `GKE` Clsuter, Create K8s manifests for the entire stack and deploy them.  
 *  **Tools involved**:  
-  * GCP  
-  * GKE
-  * Kubernetes
+    * GCP  
+    * GKE
+    * Kubernetes
+  
+  
