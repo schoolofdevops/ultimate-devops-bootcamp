@@ -1,6 +1,6 @@
 # Capstone Project
 ## Robotshop
-Robot Shop is a sample microservice application you can use as a sandbox to test and learn containerised application orchestration and monitoring techniques. It is not intended to be a comprehensive reference example of how to write a microservices application, although you will better understand some of those concepts by playing with Robot Shop. 
+[Robot Shop](https://github.com/devopsdemoapps/robot-shop) is a sample microservice application you can use as a sandbox to test and learn containerised application orchestration and monitoring techniques. It is not intended to be a comprehensive reference example of how to write a microservices application, although you will better understand some of those concepts by playing with Robot Shop. 
 ### Microservices
 Robot Shop is composed of following microservices.
 ```
@@ -62,7 +62,7 @@ Robot Shop
   *  **Tools involved**:  
         * Docker  
         
-#### Step 5:  
+#### Step 6:  
   Create Jenkins jobs which create and pushe `Docker images` for the following services.  
   * **Services**:
       * Web  
@@ -77,7 +77,7 @@ Robot Shop
       * Jenkins  
       * Docker  
       
-#### Step 6:  
+#### Step 7:  
   Create a `Docker-compose` file for the Robot Shop application with following properties.  
   *  **Services**:
       * Web  
@@ -126,9 +126,9 @@ Robot Shop
 
       
 *  **Tools involved**:  
-  * Docker  
+    * Docker  
         
-#### Step 7:  
+#### Step 8:  
 Create a `GKE` Clsuter, Create K8s manifests for the entire stack and deploy them.  
 *  **Tools involved**:  
     * GCP  
