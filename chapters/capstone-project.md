@@ -88,38 +88,38 @@ Robot Shop
         - user  
         - shipping  
         - payment 
-    ``` 
+    ```  
     * Cart  
     ```
         depends_on:  
          - redis 
-    ``` 
+    ```  
     * Catalogue  
     ```
         depends_on:  
          - mongodb  
-    ```
+    ```  
     * Dispatch  
     ```
         depends_on:  
          - rabbitmq  
-    ```
+    ```  
     * User  
     ```
         depends_on:  
          - mongodb  
          - redis  
-    ```
+    ```  
     * Shipping  
     ```
         depends_on:  
          - mysql  
-    ```
+    ```  
     * MySQL  
     ```
         cap_add:  
          - NET_ADMIN  
-    ```
+    ```  
     * RabbitMQ  
     * Redis  
     * MongoDB  
