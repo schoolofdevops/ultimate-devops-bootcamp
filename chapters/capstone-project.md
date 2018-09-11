@@ -125,14 +125,12 @@ Robot Shop
       * MongoDB  
 
       
-  *  **Tools involved**:  
-    * Docker  
+*  **Tools involved**:  
+  * Docker  
         
 #### Step 7:  
-Create a `GKE` Clsuter, Create K8s manifests for the entire stack and deploy them.
-  *  **Tools involved**:  
-    * GCP  
-    * GKE
-    * Kubernetes
-  
-  
+Create a `GKE` Clsuter, Create K8s manifests for the entire stack and deploy them.  
+*  **Tools involved**:  
+  * GCP  
+  * GKE
+  * Kubernetes
