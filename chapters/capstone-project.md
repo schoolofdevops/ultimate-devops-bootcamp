@@ -80,46 +80,46 @@ Robot Shop
 #### Step 6:  
   Create a `Docker-compose` file for the Robot Shop application with following properties.  
   *  **Services**:
-    * Web  
-    ```
+      * Web  
+      ```
        port: 8080  
        depends_on:  
         - catalogue  
         - user  
         - shipping  
         - payment 
-    ```  
+      ```  
     * Cart  
-    ```
+      ```
         depends_on:  
          - redis 
-    ```  
+      ```  
     * Catalogue  
-    ```
+      ```
         depends_on:  
          - mongodb  
-    ```  
+      ```  
     * Dispatch  
-    ```
+      ```
         depends_on:  
          - rabbitmq  
-    ```  
+      ```  
     * User  
-    ```
+      ```
         depends_on:  
          - mongodb  
          - redis  
-    ```  
+      ```  
     * Shipping  
-    ```
+      ```
         depends_on:  
          - mysql  
-    ```  
+      ```  
     * MySQL  
-    ```
+      ```
         cap_add:  
          - NET_ADMIN  
-    ```  
+      ```  
     * RabbitMQ  
     * Redis  
     * MongoDB  
