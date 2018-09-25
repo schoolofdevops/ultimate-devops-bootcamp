@@ -9,6 +9,7 @@
 * [Chapter 6: Build Pipeline For Front-End ](070_frontend.md)
 * [Chapter 7: Build Pipeline For Catalogue  ](080_catalogue.md)
 * [Chapter 8: Build Pipeline For Carts ](090_carts.md)
+* [Chapter 9: Just Enough Docker for a Devops Practitioner](010_docker_envi.md)
 
 ### License (CC-BY-NC-ND)
 
