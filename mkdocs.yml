@@ -3,6 +3,18 @@ pages:
   - Home: index.md
   - Outline : preface.md
   - Ansible: ansible_docs.md
-  - CI-CD: ci_cd_setup.md  
+  - Docker:
+    - Setting up Docker Environment: 010_docker_envi.md
+    - Launching and Operating Containers: d02-docker-operations.md
+    - Building and Publishing Images: d03-docker-images.md
+  - CI-CD:
+    - Setting up CI-CD Environment: 020_install_jenkins_jfrog_artifactory.md
+    - Jenkins Global Security and Plugins Configurations: 030_install_plugins.md
+    - Jenkins Tools Configurations: 040_jenkins_config.md
+    - Jenkins Jobs: 050_jenkins_jobs.md
+    - Building a Pipeline: 060_building_jobs_pipeline.md
+    - Build Pipeline For Front-End: 070_frontend.md
+    - Build Pipeline For Catalogue: 080_catalogue.md
+    - Build Pipeline For Carts: 090_carts.md
 docs_dir: chapters
 theme: readthedocs
