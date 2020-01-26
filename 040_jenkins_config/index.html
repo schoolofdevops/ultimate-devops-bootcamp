@@ -8,23 +8,24 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Jenkins Tools Configurations - Ultimate Devops Bootcamp</title>
+  <title>Jenkins Tools configurations - Ultimate Devops Bootcamp</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="../css/highlight.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Jenkins Tools Configurations";
+    var mkdocs_page_name = "Jenkins Tools configurations";
     var mkdocs_page_input_path = "040_jenkins_config.md";
-    var mkdocs_page_url = "/040_jenkins_config/";
+    var mkdocs_page_url = null;
   </script>
   
-  <script src="../js/jquery-2.1.1.min.js"></script>
-  <script src="../js/modernizr-2.8.3.min.js"></script>
-  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
   
 </head>
 
@@ -38,7 +39,7 @@
         <a href=".." class="icon icon-home"> Ultimate Devops Bootcamp</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
@@ -59,66 +60,12 @@
           
             <li class="toctree-l1">
 		
-    <a class="" href="../ansible/">Ansible</a>
+    <a class="" href="../ansible_docs/">Ansible</a>
 	    </li>
           
             <li class="toctree-l1">
 		
-    <span class="caption-text">CI-CD</span>
-    <ul class="subnav">
-                <li class="">
-                    
-    <a class="" href="../020_install_jenkins_jfrog_artifactory/">Setting up CI-CD Environment</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../030_install_plugins/">Jenkins Global Security and Plugins Configurations</a>
-                </li>
-                <li class=" current">
-                    
-    <a class="current" href="./">Jenkins Tools Configurations</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l3"><a href="#jenkins-tools-configurations">Jenkins Tools configurations</a></li>
-    
-        <ul>
-        
-            <li><a class="toctree-l4" href="#configuring-maven">Configuring Maven</a></li>
-        
-            <li><a class="toctree-l4" href="#configuring-nodejs">Configuring NodeJS</a></li>
-        
-            <li><a class="toctree-l4" href="#configuring-go">Configuring Go</a></li>
-        
-            <li><a class="toctree-l4" href="#configuring-ssh-for-remote-host">Configuring SSH for remote host</a></li>
-        
-            <li><a class="toctree-l4" href="#configuring-artifactory">Configuring Artifactory</a></li>
-        
-        </ul>
-    
-
-    </ul>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../050_jenkins_jobs/">Jenkins Jobs</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../060_building_jobs_pipeline/">Building a Pipeline</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../070_frontend/">Build Pipeline For Front-End</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../080_catalogue/">Build Pipeline For Catalogue</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../090_carts/">Build Pipeline For Carts</a>
-                </li>
-    </ul>
+    <a class="" href="../ci_cd_setup/">CI-CD</a>
 	    </li>
           
         </ul>
@@ -142,12 +89,8 @@
     <li><a href="..">Docs</a> &raquo;</li>
     
       
-        
-          <li>CI-CD &raquo;</li>
-        
-      
     
-    <li>Jenkins Tools Configurations</li>
+    <li>Jenkins Tools configurations</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -206,15 +149,6 @@
           </div>
           <footer>
   
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../050_jenkins_jobs/" class="btn btn-neutral float-right" title="Jenkins Jobs">Next <span class="icon icon-circle-arrow-right"></span></a>
-      
-      
-        <a href="../030_install_plugins/" class="btn btn-neutral" title="Jenkins Global Security and Plugins Configurations"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-      
-    </div>
-  
 
   <hr/>
 
@@ -237,17 +171,12 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../030_install_plugins/" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      
-      
-        <span style="margin-left: 15px"><a href="../050_jenkins_jobs/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
     <script>var base_url = '..';</script>
-    <script src="../js/theme.js"></script>
-      <script src="../search/require.js"></script>
-      <script src="../search/search.js"></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
 
 </body>
 </html>

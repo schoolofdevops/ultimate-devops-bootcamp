@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>The first chapter - Ultimate Devops Bootcamp</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "The first chapter";
+    var mkdocs_page_input_path = "a_chapter.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Ultimate Devops Bootcamp</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../preface/">Outline</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../ansible_docs/">Ansible</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../ci_cd_setup/">CI-CD</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Ultimate Devops Bootcamp</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>The first chapter</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="the-first-chapter">The first chapter</h1>
+<p>\label{cha:a_chapter}</p>
+<p>This is the first paragraph of the Softcover Markdown template produced with the \softcover\ command-line interface. It shows how to write a document in Markdown, a lightweight markup language, augmented with the <a href="http://kramdown.gettalong.org/">kramdown</a> converter and some custom extensions, including support for embedded \PolyTeX, a subset of the powerful \LaTeX\ typesetting system.[^pronunciation] For more information, see <a href="http://manual.softcover.io/book"><em>The Softcover Book</em></a>. To learn how to easily publish (and optionally sell) documents produced with Softcover, visit <a href="http://softcover.io/">Softcover.io</a>.</p>
+<p>This is the <em>second</em> paragraph, showing how to emphasize text.[^sample-footnote] You can also make text <strong>bold</strong> or <em>emphasize a second way</em>. Via embedded \PolyTeX, Softcover also supports colored text, such as \coloredtext{red}{red}, \coloredtext{CornflowerBlue}{cornflower blue}, and \coloredtexthtml{E8AB3A}{arbitrary HTML colors}.</p>
+<h2 id="a-section">A section</h2>
+<p>\label{sec:a_section}</p>
+<p>This is a section. You can refer to it using the \LaTeX\ cross-reference syntax, like so: Section~\ref{sec:a_section}.</p>
+<h3 id="source-code">Source code</h3>
+<p>This is a subsection.</p>
+<p>You can typeset code samples and other verbatim text using four spaces of indentation:</p>
+<pre><code>def hello
+  puts "hello, world"
+end
+</code></pre>
+<p>Softcover also comes with full support for syntax-highlighted source code using kramdown's default syntax, which combines the language name with indentation:</p>
+<p>{lang="ruby"}
+    def hello
+      puts "hello, world"
+    end</p>
+<p>Softcover's Markdown mode also extends kramdown to support "code fencing" from GitHub-flavored Markdown:</p>
+<pre><code class="ruby">def hello
+  puts &quot;hello, world!&quot;
+end
+</code></pre>
+
+<p>The last of these can be combined with \PolyTeX's <code>codelisting</code> environment to make code listings with linked cross-references (Listing~\ref{code:hello}).</p>
+<p>\begin{codelisting}
+\codecaption{Hello, world.}
+\label{code:hello}</p>
+<pre><code class="ruby">def hello
+  puts &quot;hello, world!&quot;
+end
+</code></pre>
+
+<p>\end{codelisting}</p>
+<h3 id="mathematics">Mathematics</h3>
+<p>Softcover's Markdown mode supports mathematical typesetting using \LaTeX\ syntax, including inline math, such as ( \phi^2 - \phi - 1 = 0, ) and centered math, such as
+[ \phi = \frac{1+\sqrt{5}}{2}. ]
+It also supports centered equations with linked cross-reference via embedded \PolyTeX\ (Eq.~\eqref{eq:phi}).</p>
+<p>\begin{equation}
+\label{eq:phi}
+\phi = \frac{1+\sqrt{5}}{2}
+\end{equation}</p>
+<p>Softcover also supports an alternate math syntax, such as {$$}\phi^2 - \phi - 1 = 0{/$$}, and centered math, such as</p>
+<p>{$$}
+\phi = \frac{1+\sqrt{5}}{2}.
+{/$$}</p>
+<p>The \LaTeX\ syntax is strongly preferred, but the alternate syntax is included for maximum compatibility with other systems.</p>
+<h2 id="images-and-tables">Images and tables</h2>
+<p>This is the second section.</p>
+<p>Softcover supports the inclusion of images, like this:</p>
+<p><img alt="Some dude." src="images/figures/01_michael_hartl_headshot.jpg" /></p>
+<p>Using \LaTeX\ labels, you can also include a caption (as in Figure~\ref{fig:captioned_image}) or just a figure number (as in Figure~\ref{fig:figure_number}).</p>
+<p><img alt="Some dude.\label{fig:captioned_image}" src="images/figures/01_michael_hartl_headshot.jpg" /></p>
+<p><img alt="\label{fig:figure_number}" src="images/figures/01_michael_hartl_headshot.jpg" /></p>
+<h3 id="tables">Tables</h3>
+<p>Softcover supports raw tables via a simple table syntax:</p>
+<p>|<strong>HTTP request</strong> | <strong>URL</strong> | <strong>Action</strong> | <strong>Purpose</strong> |
+| <code>GET</code> | /users | <code>index</code> | page to list all users |
+| <code>GET</code> | /users/1 | <code>show</code> | page to show user with id <code>1</code> |
+| <code>GET</code> | /users/new | <code>new</code> | page to make a new user |
+| <code>POST</code> | /users | <code>create</code> | create a new user |
+| <code>GET</code> | /users/1/edit | <code>edit</code> | page to edit user with id <code>1</code> |
+| <code>PATCH</code> | /users/1 | <code>update</code> | update user with id <code>1</code> |
+| <code>DELETE</code> | /users/1 | <code>destroy</code> | delete user with id <code>1</code> |</p>
+<p>See <a href="http://manual.softcover.io/book/softcover_markdown#sec-embedded_tabular_and_tables"><em>The Softcover Book</em></a> to learn how to make more complicated tables.</p>
+<h2 id="command-line-interface">Command-line interface</h2>
+<p>Softcover comes with a command-line interface called <code>softcover</code>. To get more information, just run <code>softcover help</code>:</p>
+<pre><code class="console">$ softcover help
+Commands:
+  softcover build, build:all           # Build all formats
+  softcover build:epub                 # Build EPUB
+  softcover build:html                 # Build HTML
+  softcover build:mobi                 # Build MOBI
+  softcover build:pdf                  # Build PDF
+  softcover build:preview              # Build book preview in all formats
+  .
+  .
+  .
+</code></pre>
+
+<p>\noindent You can run <code>softcover help &lt;command&gt;</code> to get additional help on a given command:</p>
+<pre><code class="console">$ softcover help build
+Usage:
+  softcover build, build:all
+
+Options:
+  -q, [--quiet]   # Quiet output
+  -s, [--silent]  # Silent output
+
+Build all formats
+</code></pre>
+
+<h2 id="miscellanea">Miscellanea</h2>
+<p>This is the end of the template---apart from two mostly empty chapters. In fact, let’s include the last chapter in its entirety, just to see how mostly empty it is:</p>
+<p>&lt;&lt;(chapters/yet_another_chapter.md, lang: text)</p>
+<p>Visit <a href="http://manual.softcover.io"><em>The Softcover Book</em></a> to learn more about what Softcover can do.</p>
+<p>[^sample-footnote]: This is a footnote. It is numbered automatically.</p>
+<p>[^pronunciation]: Pronunciations of "LaTeX" differ, but <em>lay</em>-tech is the one I prefer.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>

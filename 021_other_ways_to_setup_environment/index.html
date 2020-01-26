@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>021 other ways to setup environment - Ultimate Devops Bootcamp</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "021 other ways to setup environment";
+    var mkdocs_page_input_path = "021_other_ways_to_setup_environment.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Ultimate Devops Bootcamp</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../preface/">Outline</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../ansible_docs/">Ansible</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../ci_cd_setup/">CI-CD</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Ultimate Devops Bootcamp</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>021 other ways to setup environment</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="setting-up-environment-using-vagrant-pre-bundled-image">Setting up environment using  Vagrant (Pre bundled Image)</h2>
+<p>This is the simplest way of setting up the learning environment for this course following are the pre requisites,</p>
+<ul>
+<li>You should have setup the environment by following the steps mentioned on the <a href="https://github.com/schoolofdevops/lab-setup/blob/master/common/common-lab-setup-instructions.md">Common Lab Setup Instructions</a>  </li>
+<li>You should also have received a pre pre bundled vagrant box (e.g. devops-ci-v01.box) with jenkins and docker installed and copied over to your development machine (windows/Mac/Linux Laptop/Desktop)  </li>
+<li>You should have downloaded the <a href="https://github.com/schoolofdevops/lab-setup">lab-setup repository</a>  </li>
+</ul>
+<h3 id="import-the-vagrant-box">Import the Vagrant Box</h3>
+<p>Open a bash terminal using ConEMU or Git Bash, change into the directory where you have copied over the box file and import it using,</p>
+<pre><code>vagrant box add devops  devops-ci-v01.box
+</code></pre>
+
+<p>Validate that the box is available on your system by running,</p>
+<pre><code>vagrant box list
+</code></pre>
+
+<p>[output]</p>
+<pre><code>devops                   (virtualbox, 0)
+</code></pre>
+
+<p>If you see <strong>devops</strong> in the list of available boxes, the template is been successfully imported.</p>
+<p>Now lets bring up the Vagrant environment. To do so, you need to open a bash shell either using ConEmu or Git Bash and cd into lab-setup/ci/virtual directory. In this directory, you should see a Vagrantfile.</p>
+<p>All vagrant commands to manage a VM are run from a directory where this Vagrantfile is.</p>
+<pre><code>cd lab-setup/ci/virtual
+vagrant up
+vagrant ssh
+</code></pre>
+
+<p>After you run <strong>vagrant ssh</strong>, you should have been logged into the environment.</p>
+<p>Validate that Jenkins comes up at the following URL</p>
+<p>http://YOUR_IP_ADDRESS:8080</p>
+<h2 id="setting-up-learning-environment-on-ubuntu-1404">Setting up learning environment on Ubuntu 14.04</h2>
+<p>Jenkins requires Java Development Kit to be installed first.</p>
+<h3 id="installing-pre-requisites">Installing Pre Requisites</h3>
+<h4 id="openjdk-7">OpenJDK 7</h4>
+<ul>
+<li>Installing OpenJDK 7</li>
+</ul>
+<pre><code>$ sudo apt-get install add-apt-repository
+$ sudo add-apt-repository ppa:openjdk-r/ppa
+$ sudo apt-get update
+$ sudo apt-get install openjdk-8-jdk
+</code></pre>
+
+<p>Run the following command to set the default Java and Javac:</p>
+<pre><code>$ sudo update-alternatives --config java
+$ sudo update-alternatives --config javac
+</code></pre>
+
+<p>If there is more than one Java versions installed on your system, type in a number to select a Java version.</p>
+<p>If you face any dependency error use this command to resolve the dependencies.</p>
+<pre><code>$ sudo apt-get -f install
+</code></pre>
+
+<ul>
+<li>Verifying Installation</li>
+</ul>
+<pre><code>$ sudo java -version
+</code></pre>
+
+<h4 id="installing-maven-3">Installing Maven 3</h4>
+<ul>
+<li>Installing Maven</li>
+</ul>
+<pre><code>$ sudo apt-get install maven
+</code></pre>
+
+<ul>
+<li>Verifying Installation</li>
+</ul>
+<pre><code>$ sudo mvn -version
+</code></pre>
+
+<h3 id="installing-jenkins">Installing Jenkins</h3>
+<p>To install Jenkins in Ubuntu visit <a href="http://pkg.jenkins-ci.org/debian-stable/">jenkins.io</a></p>
+<p>Download the specific version of .deb package using wget in tmp folder and proceed with depackaging.</p>
+<p><strong>Note:</strong> In our case we use jenkins_1.651.3</p>
+<pre><code>$ sudo wget http://pkg.jenkins-ci.org/debian-stable/binary/jenkins_2.19.4_all.deb
+$ sudo dpkg -i jenkins_1.651.3_all.deb
+</code></pre>
+
+<p>Verifying Installation by checking the status of Jenkins service.</p>
+<pre><code>$ sudo ps -aux | grep jenkins
+</code></pre>
+
+<p>Jenkins service is running in port 8080</p>
+<p>Visit Jenkins Console in browser by visitig <code>http://localhost:8080</code> replace localhost with the VMs' IP.</p>
+<h2 id="setting-up-learning-environment-on-centosrhel-6x">Setting up learning environment on CentOS/RHEL 6.x</h2>
+<p>Jenkins requires Java Development Kit to be installed first.</p>
+<h3 id="installing-pre-requisites_1">Installing Pre Requisites</h3>
+<p>Installing OpenJDK 7</p>
+<pre><code>yum install -y  &lt;jdk&gt;
+</code></pre>
+
+<h3 id="installing-jenkins_1">Installing Jenkins</h3>
+<pre><code>sudo wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat-stable/jenkins.repo
+sudo rpm --import https://jenkins-ci.org/redhat/jenkins-ci.org.key
+sudo yum install jenkins
+sudo service jenkins start
+</code></pre>
+
+<h3 id="installing-docker">Installing Docker</h3>
+<p>Since this tutorial uses docker to deploy application, its essential to install <strong>Docker</strong> and <strong>Docker Compose</strong>.</p>
+<p>Refer to the following resources to install Docker</p>
+<p><a href="https://docs.docker.com/engine/installation/">Docker Installation Guide</a>
+<a href="https://docs.docker.com/compose/install/">Docker Compose Installation Guide</a></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>

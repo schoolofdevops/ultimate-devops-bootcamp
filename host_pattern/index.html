@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Creating First Project - Ultimate Devops Bootcamp</title>
+  <title>Host pattern - Ultimate Devops Bootcamp</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
@@ -17,8 +17,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Creating First Project";
-    var mkdocs_page_input_path = "050_jenkins_jobs.md";
+    var mkdocs_page_name = "Host pattern";
+    var mkdocs_page_input_path = "host_pattern.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -90,7 +90,7 @@
     
       
     
-    <li>Creating First Project</li>
+    <li>Host pattern</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -100,60 +100,92 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="creating-first-project">Creating First Project</h1>
-<p>In this session we are going to create and launch our first project  with jenkins. We will be using a free style project for this example.</p>
-<h2 id="types-of-jobs">Types of Jobs</h2>
-<p>With Jenkins you could create following kind of projects or jobs.</p>
-<ul>
-<li>Free Style</li>
-<li>Maven</li>
-<li>External Job</li>
-<li>Multi Configuration</li>
-</ul>
-<h2 id="jenkins-jobs-anatomy">Jenkins Jobs Anatomy</h2>
-<p>A typical style jenkins jobs has the following sections.</p>
-<p><img alt="Anatomy of a Jenkins Job" src="../images/chap4/jenkins_job_anatomy.png" /></p>
-<ul>
-<li>Name/description</li>
-<li>Advanced Option</li>
-<li>Source Code Management</li>
-<li>Build Triggers</li>
-<li>Pre Build</li>
-<li>Build</li>
-<li>Post Build</li>
-</ul>
-<h2 id="creating-a-simple-job">Creating a Simple Job</h2>
-<p>Lets now create a simple job using jenkins to run a hello world program.</p>
-<ol>
-<li>From Jenkins Main page, click on <strong>New Item</strong>.
-    <img alt="New Job" src="../images/chap4/new_item.jpg" />  </li>
-<li>Provide a name to the project in Item Name i.e. "job1". Check against Free Style Project.
-    <img alt=" Naming Jenkins Job " src="../images/chap4/job_name.jpg" /></li>
-</ol>
-<p>Next screen opens the job configuration page. On the job configuration page,</p>
-<ol>
-<li>
-<p>Add job description. e.g., "Our first Jenkins Job".</p>
-</li>
-<li>
-<p>Skip Source Code Management and Build Triggers, and scroll down to <strong>Build</strong> configurations.</p>
-</li>
-<li>
-<p>From "Add Build Step" select <strong>Execute Shell</strong> and provide commands to execute. Since this  is a  mock job, you could provide following sample code,</p>
-</li>
-</ol>
-<pre><code>#!/bin/bash
-echo &quot;Hello World !&quot;
-sleep 10
+                <h3 id="inventories-and-host-patterns">Inventories and host patterns</h3>
+<p>In this section we are going to Deploy applications frontend , carts and catalogue. The part of the code is alredy avaible that repo. we have alredy cloned. we just provide some commom configuration.</p>
+<p>Following is our recommended layout for organizing your ansible code. There are a couple of alternatives as discusses on <a href="https://docs.ansible.com/ansible/latest/user_guide/playbooks_best_practices.html#directory-layout">official documentation</a></p>
+<pre><code>ansible
+   |\
+   | |_ environments
+   |         \
+   |          |_ dev
+   |          |
+   |          |_ prod
+   |
+   |
+   |\
+   | |_ group_vars
+   |        \
+   |         |_ all
+   |         |
+   |         |_ dev
+   |         |
+   |         |_ prod
+   |
+   |\
+   | |_ roles
+   |        \
+   |         |_ app1
+   |         |
+   |         |_ app2
+   |
+   |
+   |\
+   | |  
+   |  \
+   |   |_ playbook1.yml
+   |   |
+   |     |
+   |   |_ playbook2.yml
+   |
+   |
+   |
+   |_ _ ansible.cfg
+
+
 </code></pre>
 
-<p>Review and click on save to go to project page.</p>
-<p><img alt="Project Page" src="../images/chap4/project_page.jpg" /></p>
-<h2 id="building-job-for-the-first-time">Building Job for the First Time</h2>
-<p>Click on <strong>Build Now</strong> to launch a build. Once the build is started, you would see the status in the <strong>Build History</strong> section.</p>
-<p>Once build is finished, click on the build number which starts with # . Clicking on the build number e.g. <strong>#1</strong> will take you to the page which shows the build stats. Option of interest on this page might be <strong>Console Status</strong> which shows the run time output.</p>
-<p><img alt="Console Output" src="../images/chap4/console_output.jpg" /></p>
-<hr />
+<p>This is the place where you would add your inventories</p>
+<pre><code>ansible 
+   \
+     environments
+            \
+             |_ dev
+         |
+         |_ prod
+</code></pre>
+
+<p>then try to ping using following command</p>
+<pre><code>ansible all -m ping
+</code></pre>
+
+<p>[output]</p>
+<pre><code>lb | SUCCESS =&gt; {
+    &quot;changed&quot;: false,
+    &quot;ping&quot;: &quot;pong&quot;
+}
+frontend | SUCCESS =&gt; {
+    &quot;changed&quot;: false,
+    &quot;ping&quot;: &quot;pong&quot;
+}
+carts | SUCCESS =&gt; {
+    &quot;changed&quot;: false,
+    &quot;ping&quot;: &quot;pong&quot;
+}
+catalogue | SUCCESS =&gt; {
+    &quot;changed&quot;: false,
+
+</code></pre>
+
+<p>patterns</p>
+<pre><code>ansible 'frontend' -m ping
+
+ansible 'dev' -m ping
+
+ansible 'dev:!frontend' -m ping
+
+ansible 'carts:frontend' -m ping
+
+</code></pre>
               
             </div>
           </div>

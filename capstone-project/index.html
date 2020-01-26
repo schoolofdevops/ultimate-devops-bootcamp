@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Capstone Project - Ultimate Devops Bootcamp</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Capstone Project";
+    var mkdocs_page_input_path = "capstone-project.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Ultimate Devops Bootcamp</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../preface/">Outline</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../ansible_docs/">Ansible</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../ci_cd_setup/">CI-CD</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Ultimate Devops Bootcamp</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Capstone Project</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="capstone-project">Capstone Project</h1>
+<h2 id="robotshop">Robotshop</h2>
+<p><a href="https://github.com/devopsdemoapps/robot-shop">Robot Shop</a> is a sample microservice application you can use as a sandbox to test and learn containerised application orchestration and monitoring techniques. It is not intended to be a comprehensive reference example of how to write a microservices application, although you will better understand some of those concepts by playing with Robot Shop. </p>
+<h3 id="microservices">Microservices</h3>
+<p>Robot Shop is composed of following microservices.</p>
+<pre><code>Robot Shop
+  \
+  |--- Web (HTML)
+  |--- Cart (Node)
+  |--- Catalogue (Node)
+  |--- Dispatch (Go)
+  |--- User (Node)
+  |--- Shipping (Java)
+  |--- Payment (Python)
+  |--- MySQL
+  |--- Redis
+  |--- RabbitMQ
+  |--- MongoDB
+</code></pre>
+
+<h3 id="goal">Goal:</h3>
+<p>Build and Deploy all the microservices in Robot Shop using tools such as Git, Jenkins, Docker, Kubernetes, Prometheus, CSPs(AWS and GCP).</p>
+<h4 id="step-1">Step 1:</h4>
+<p>Create and commit(in future) all the code to a <code>Git</code> repostory hosted on Github.<br />
+   * <strong>Tools involved</strong>:<br />
+      * Git  </p>
+<h4 id="step-2">Step 2:</h4>
+<p>Create one VM with following properties.<br />
+  * <strong>VM Properties</strong>:<br />
+       * Cloud: <code>AWS</code><br />
+       * OS: <code>Ubunt 16.04</code><br />
+       * Size: <code>t2.micro</code><br />
+       * Name: <code>build-server</code><br />
+       * Open Ports: <code>8080</code>, <code>22</code><br />
+  * <strong>Tools involved</strong>:<br />
+       * AWS console  </p>
+<h4 id="step-3">Step 3:</h4>
+<p>Install <em>Jenkins(latest)</em> and <em>Docker(latest)</em> on the VM using <code>Ansible(version 2.5)</code>.<br />
+  *  <strong>Tools involved</strong>:<br />
+        * Ansible  </p>
+<h4 id="step-4">Step 4:</h4>
+<p>Create a <code>Jenkins Pipeline</code> which <em>builds</em> and <em>tests(unit test)</em> <em>Shipping</em> service.<br />
+  *  <strong>Tools involved</strong>:<br />
+        * Jenkins  </p>
+<h4 id="step-5">Step 5:</h4>
+<p>Create <code>Dockerfiles</code> for all the following services.<br />
+  * <strong>Services</strong>:
+    * Web<br />
+    * Cart<br />
+    * Catalogue<br />
+    * Dispatch<br />
+    * User<br />
+    * Shipping  </p>
+<ul>
+<li><strong>Tools involved</strong>:<br />
+        * Docker  </li>
+</ul>
+<h4 id="step-6">Step 6:</h4>
+<p>Create Jenkins jobs which create and pushe <code>Docker images</code> for the following services.<br />
+  * <strong>Services</strong>:
+      * Web<br />
+      * Cart<br />
+      * Catalogue<br />
+      * Dispatch<br />
+      * User<br />
+      * Shipping  </p>
+<ul>
+<li><strong>Tools involved</strong>:  <ul>
+<li>Jenkins  </li>
+<li>Docker  </li>
+</ul>
+</li>
+</ul>
+<h4 id="step-7">Step 7:</h4>
+<p>Create a <code>Docker-compose</code> file for the Robot Shop application with following properties.<br />
+  *  <strong>Services</strong>:
+      * Web<br />
+<code>port: 8080  
+       depends_on:  
+        - catalogue  
+        - user  
+        - shipping  
+        - payment</code><br />
+      * Cart<br />
+<code>depends_on:  
+         - redis</code><br />
+      * Catalogue<br />
+<code>depends_on:  
+         - mongodb</code><br />
+      * Dispatch<br />
+<code>depends_on:  
+         - rabbitmq</code><br />
+      * User<br />
+<code>depends_on:  
+         - mongodb  
+         - redis</code><br />
+      * Shipping<br />
+<code>depends_on:  
+         - mysql</code><br />
+      * MySQL<br />
+<code>cap_add:  
+         - NET_ADMIN</code><br />
+      * RabbitMQ<br />
+      * Redis<br />
+      * MongoDB  </p>
+<ul>
+<li><strong>Tools involved</strong>:  <ul>
+<li>Docker  </li>
+</ul>
+</li>
+</ul>
+<h4 id="step-8">Step 8:</h4>
+<p>Create a <code>GKE</code> Clsuter, Create K8s manifests for the entire stack and deploy them.<br />
+*  <strong>Tools involved</strong>:<br />
+    * GCP<br />
+    * GKE
+    * Kubernetes</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>

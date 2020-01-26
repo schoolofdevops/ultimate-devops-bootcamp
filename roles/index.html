@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Creating First Project - Ultimate Devops Bootcamp</title>
+  <title>Roles - Ultimate Devops Bootcamp</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
@@ -17,8 +17,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Creating First Project";
-    var mkdocs_page_input_path = "050_jenkins_jobs.md";
+    var mkdocs_page_name = "Roles";
+    var mkdocs_page_input_path = "roles.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -90,7 +90,7 @@
     
       
     
-    <li>Creating First Project</li>
+    <li>Roles</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -100,60 +100,67 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="creating-first-project">Creating First Project</h1>
-<p>In this session we are going to create and launch our first project  with jenkins. We will be using a free style project for this example.</p>
-<h2 id="types-of-jobs">Types of Jobs</h2>
-<p>With Jenkins you could create following kind of projects or jobs.</p>
+                <h3 id="roles-for-modular-configurations">Roles for modular configurations</h3>
+<p>Now is the time to start creating modular, reusable library of code for application configurations. In this chapter, we are going to write such modular code, in the form of roles and setup application server.</p>
+<p>We are going to create the roles with following specs,</p>
 <ul>
-<li>Free Style</li>
-<li>Maven</li>
-<li>External Job</li>
-<li>Multi Configuration</li>
+<li>frontend</li>
+<li>catalogue</li>
+<li>
+<p>cart</p>
+</li>
+<li>
+<p>Create roles directory</p>
+</li>
 </ul>
-<h2 id="jenkins-jobs-anatomy">Jenkins Jobs Anatomy</h2>
-<p>A typical style jenkins jobs has the following sections.</p>
-<p><img alt="Anatomy of a Jenkins Job" src="../images/chap4/jenkins_job_anatomy.png" /></p>
-<ul>
-<li>Name/description</li>
-<li>Advanced Option</li>
-<li>Source Code Management</li>
-<li>Build Triggers</li>
-<li>Pre Build</li>
-<li>Build</li>
-<li>Post Build</li>
-</ul>
-<h2 id="creating-a-simple-job">Creating a Simple Job</h2>
-<p>Lets now create a simple job using jenkins to run a hello world program.</p>
-<ol>
-<li>From Jenkins Main page, click on <strong>New Item</strong>.
-    <img alt="New Job" src="../images/chap4/new_item.jpg" />  </li>
-<li>Provide a name to the project in Item Name i.e. "job1". Check against Free Style Project.
-    <img alt=" Naming Jenkins Job " src="../images/chap4/job_name.jpg" /></li>
-</ol>
-<p>Next screen opens the job configuration page. On the job configuration page,</p>
-<ol>
-<li>
-<p>Add job description. e.g., "Our first Jenkins Job".</p>
-</li>
-<li>
-<p>Skip Source Code Management and Build Triggers, and scroll down to <strong>Build</strong> configurations.</p>
-</li>
-<li>
-<p>From "Add Build Step" select <strong>Execute Shell</strong> and provide commands to execute. Since this  is a  mock job, you could provide following sample code,</p>
-</li>
-</ol>
-<pre><code>#!/bin/bash
-echo &quot;Hello World !&quot;
-sleep 10
+<pre><code>mkdir roles
 </code></pre>
 
-<p>Review and click on save to go to project page.</p>
-<p><img alt="Project Page" src="../images/chap4/project_page.jpg" /></p>
-<h2 id="building-job-for-the-first-time">Building Job for the First Time</h2>
-<p>Click on <strong>Build Now</strong> to launch a build. Once the build is started, you would see the status in the <strong>Build History</strong> section.</p>
-<p>Once build is finished, click on the build number which starts with # . Clicking on the build number e.g. <strong>#1</strong> will take you to the page which shows the build stats. Option of interest on this page might be <strong>Console Status</strong> which shows the run time output.</p>
-<p><img alt="Console Output" src="../images/chap4/console_output.jpg" /></p>
-<hr />
+<ul>
+<li>Generate role scaffolding using ansible-galaxy</li>
+</ul>
+<pre><code>ansible-galaxy init --offline --init-path=roles  frontend
+</code></pre>
+
+<ul>
+<li>Validate</li>
+</ul>
+<pre><code>tree roles/
+</code></pre>
+
+<p>[output]</p>
+<pre><code>  roles/
+    └── apache
+        ├── defaults
+        │   └── main.yml
+        ├── files
+        ├── handlers
+        │   └── main.yml
+        ├── meta
+        │   └── main.yml
+        ├── README.md
+        ├── tasks
+        │   └── main.yml
+        ├── templates
+        ├── tests
+        │   ├── inventory
+        │   └── test.yml
+        └── vars
+            └── main.yml
+</code></pre>
+
+<h3 id="playbooks-to-map-hosts-to-roles">Playbooks to map hosts to roles</h3>
+<p>Create a playbook for app servers frontend.yaml , with following contents</p>
+<pre><code>  ---
+  - hosts: frontend
+    become: true
+    roles:
+      - frontend
+</code></pre>
+
+<pre><code>  ansible-playbook frontend.yml
+
+</code></pre>
               
             </div>
           </div>

@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Creating First Project - Ultimate Devops Bootcamp</title>
+  <title>CI-CD - Ultimate Devops Bootcamp</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
@@ -17,8 +17,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Creating First Project";
-    var mkdocs_page_input_path = "050_jenkins_jobs.md";
+    var mkdocs_page_name = "CI-CD";
+    var mkdocs_page_input_path = "ci_cd_setup.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -63,9 +63,21 @@
     <a class="" href="../ansible_docs/">Ansible</a>
 	    </li>
           
-            <li class="toctree-l1">
+            <li class="toctree-l1 current">
 		
-    <a class="" href="../ci_cd_setup/">CI-CD</a>
+    <a class="current" href="./">CI-CD</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#ci-cd-setup-with-jenkins-and-jfrog-artifactory">CI-CD Setup with Jenkins and JFrog Artifactory</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#license-cc-by-nc-nd">License (CC-BY-NC-ND)</a></li>
+        
+        </ul>
+    
+
+    </ul>
 	    </li>
           
         </ul>
@@ -90,7 +102,7 @@
     
       
     
-    <li>Creating First Project</li>
+    <li>CI-CD</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -100,64 +112,31 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="creating-first-project">Creating First Project</h1>
-<p>In this session we are going to create and launch our first project  with jenkins. We will be using a free style project for this example.</p>
-<h2 id="types-of-jobs">Types of Jobs</h2>
-<p>With Jenkins you could create following kind of projects or jobs.</p>
+                <h1 id="ci-cd-setup-with-jenkins-and-jfrog-artifactory">CI-CD Setup with Jenkins and JFrog Artifactory</h1>
 <ul>
-<li>Free Style</li>
-<li>Maven</li>
-<li>External Job</li>
-<li>Multi Configuration</li>
+<li><a href="../020_install_jenkins_jfrog_artifactory/">Chapter 1: Setting up CI-CD Environment </a>  </li>
+<li><a href="../030_install_plugins/">Chapter 2: Jenkins Global Security and Plugins Configurations </a></li>
+<li><a href="../040_jenkins_config/">Chapter 3: Jenkins Tools Configurations </a></li>
+<li><a href="../050_jenkins_jobs/">Chapter 4: Jenkins Jobs </a></li>
+<li><a href="../060_building_jobs_pipeline/">Chapter 5: Building a Pipeline </a></li>
+<li><a href="../070_frontend/">Chapter 6: Build Pipeline For Front-End </a></li>
+<li><a href="../080_catalogue/">Chapter 7: Build Pipeline For Catalogue  </a></li>
+<li><a href="../090_carts/">Chapter 8: Build Pipeline For Carts </a></li>
+<li><a href="../010_docker_envi/">Chapter 9: Just Enough Docker for a Devops Practitioner</a></li>
 </ul>
-<h2 id="jenkins-jobs-anatomy">Jenkins Jobs Anatomy</h2>
-<p>A typical style jenkins jobs has the following sections.</p>
-<p><img alt="Anatomy of a Jenkins Job" src="../images/chap4/jenkins_job_anatomy.png" /></p>
-<ul>
-<li>Name/description</li>
-<li>Advanced Option</li>
-<li>Source Code Management</li>
-<li>Build Triggers</li>
-<li>Pre Build</li>
-<li>Build</li>
-<li>Post Build</li>
-</ul>
-<h2 id="creating-a-simple-job">Creating a Simple Job</h2>
-<p>Lets now create a simple job using jenkins to run a hello world program.</p>
-<ol>
-<li>From Jenkins Main page, click on <strong>New Item</strong>.
-    <img alt="New Job" src="../images/chap4/new_item.jpg" />  </li>
-<li>Provide a name to the project in Item Name i.e. "job1". Check against Free Style Project.
-    <img alt=" Naming Jenkins Job " src="../images/chap4/job_name.jpg" /></li>
-</ol>
-<p>Next screen opens the job configuration page. On the job configuration page,</p>
-<ol>
-<li>
-<p>Add job description. e.g., "Our first Jenkins Job".</p>
-</li>
-<li>
-<p>Skip Source Code Management and Build Triggers, and scroll down to <strong>Build</strong> configurations.</p>
-</li>
-<li>
-<p>From "Add Build Step" select <strong>Execute Shell</strong> and provide commands to execute. Since this  is a  mock job, you could provide following sample code,</p>
-</li>
-</ol>
-<pre><code>#!/bin/bash
-echo &quot;Hello World !&quot;
-sleep 10
-</code></pre>
-
-<p>Review and click on save to go to project page.</p>
-<p><img alt="Project Page" src="../images/chap4/project_page.jpg" /></p>
-<h2 id="building-job-for-the-first-time">Building Job for the First Time</h2>
-<p>Click on <strong>Build Now</strong> to launch a build. Once the build is started, you would see the status in the <strong>Build History</strong> section.</p>
-<p>Once build is finished, click on the build number which starts with # . Clicking on the build number e.g. <strong>#1</strong> will take you to the page which shows the build stats. Option of interest on this page might be <strong>Console Status</strong> which shows the run time output.</p>
-<p><img alt="Console Output" src="../images/chap4/console_output.jpg" /></p>
-<hr />
+<h3 id="license-cc-by-nc-nd">License (CC-BY-NC-ND)</h3>
+<p><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">CI-CD Setup</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="www.sagarinitcron.com" property="cc:attributionName" rel="cc:attributionURL">School of Devops</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.</p>
               
             </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../ansible_docs/" class="btn btn-neutral" title="Ansible"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
@@ -180,6 +159,8 @@ sleep 10
   <div class="rst-versions" role="note" style="cursor: pointer">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
+      
+        <span><a href="../ansible_docs/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
     </span>

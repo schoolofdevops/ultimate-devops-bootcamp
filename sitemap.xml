@@ -1,80 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-    
     <url>
-     <loc>/</loc>
-     <lastmod>2018-02-19</lastmod>
+     <loc>None</loc>
+     <lastmod>2020-01-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
     <url>
-     <loc>/preface/</loc>
-     <lastmod>2018-02-19</lastmod>
+     <loc>None</loc>
+     <lastmod>2020-01-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
     <url>
-     <loc>/ansible/</loc>
-     <lastmod>2018-02-19</lastmod>
+     <loc>None</loc>
+     <lastmod>2020-01-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
-        
     <url>
-     <loc>/020_install_jenkins_jfrog_artifactory/</loc>
-     <lastmod>2018-02-19</lastmod>
+     <loc>None</loc>
+     <lastmod>2020-01-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
-    <url>
-     <loc>/030_install_plugins/</loc>
-     <lastmod>2018-02-19</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/040_jenkins_config/</loc>
-     <lastmod>2018-02-19</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/050_jenkins_jobs/</loc>
-     <lastmod>2018-02-19</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/060_building_jobs_pipeline/</loc>
-     <lastmod>2018-02-19</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/070_frontend/</loc>
-     <lastmod>2018-02-19</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/080_catalogue/</loc>
-     <lastmod>2018-02-19</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/090_carts/</loc>
-     <lastmod>2018-02-19</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    
-
 </urlset>

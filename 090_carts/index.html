@@ -8,23 +8,24 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Build Pipeline For Carts - Ultimate Devops Bootcamp</title>
+  <title>Build Pipeline for Cart - Ultimate Devops Bootcamp</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="../css/highlight.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Build Pipeline For Carts";
+    var mkdocs_page_name = "Build Pipeline for Cart";
     var mkdocs_page_input_path = "090_carts.md";
-    var mkdocs_page_url = "/090_carts/";
+    var mkdocs_page_url = null;
   </script>
   
-  <script src="../js/jquery-2.1.1.min.js"></script>
-  <script src="../js/modernizr-2.8.3.min.js"></script>
-  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
   
 </head>
 
@@ -38,7 +39,7 @@
         <a href=".." class="icon icon-home"> Ultimate Devops Bootcamp</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
@@ -59,64 +60,12 @@
           
             <li class="toctree-l1">
 		
-    <a class="" href="../ansible/">Ansible</a>
+    <a class="" href="../ansible_docs/">Ansible</a>
 	    </li>
           
             <li class="toctree-l1">
 		
-    <span class="caption-text">CI-CD</span>
-    <ul class="subnav">
-                <li class="">
-                    
-    <a class="" href="../020_install_jenkins_jfrog_artifactory/">Setting up CI-CD Environment</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../030_install_plugins/">Jenkins Global Security and Plugins Configurations</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../040_jenkins_config/">Jenkins Tools Configurations</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../050_jenkins_jobs/">Jenkins Jobs</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../060_building_jobs_pipeline/">Building a Pipeline</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../070_frontend/">Build Pipeline For Front-End</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../080_catalogue/">Build Pipeline For Catalogue</a>
-                </li>
-                <li class=" current">
-                    
-    <a class="current" href="./">Build Pipeline For Carts</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l3"><a href="#build-pipeline-for-cart">Build Pipeline for Cart</a></li>
-    
-        <ul>
-        
-            <li><a class="toctree-l4" href="#job-1-unit-testing">Job 1 (Unit testing)</a></li>
-        
-            <li><a class="toctree-l4" href="#job-2-component-testing">Job 2 (Component Testing)</a></li>
-        
-            <li><a class="toctree-l4" href="#job-3-packages">Job 3 (Packages)</a></li>
-        
-            <li><a class="toctree-l4" href="#artifactory-">ARTIFACTORY :-</a></li>
-        
-        </ul>
-    
-
-    </ul>
-                </li>
-    </ul>
+    <a class="" href="../ci_cd_setup/">CI-CD</a>
 	    </li>
           
         </ul>
@@ -140,12 +89,8 @@
     <li><a href="..">Docs</a> &raquo;</li>
     
       
-        
-          <li>CI-CD &raquo;</li>
-        
-      
     
-    <li>Build Pipeline For Carts</li>
+    <li>Build Pipeline for Cart</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -162,11 +107,11 @@
 <li>Component Testing</li>
 <li>Packages</li>
 </ul>
-<p>![BUILD PIPELINE](images/pipeline/BUILD PIPELINE.png)</p>
+<p><img alt="BUILD PIPELINE" src="../images/pipeline/BUILD PIPELINE.png" /></p>
 <h2 id="job-1-unit-testing">Job 1 (Unit testing)</h2>
 <p>Jenkins provides an out of box functionality for Junit, and provides a host of plugins for unit testing for other technologies. Unit tests verify that a small block of code behaves as expected under a well-defined set of external conditions. Unit tests aim to isolate the code under test.
   Once the Unit testing is successful it goes to next job called <em>Component testing</em></p>
-<p>![Unit Testing](images/Job1/Unit test.png)</p>
+<p><img alt="Unit Testing" src="../images/Job1/Unit test.png" /></p>
 <h3 id="general">General</h3>
 <p>The source Code of this project will be available on the github.com.</p>
 <p>Project url:</p>
@@ -186,7 +131,7 @@
 <p><img alt="Build" src="../images/Job1/Build1.png" /></p>
 <h2 id="job-2-component-testing">Job 2 (Component Testing)</h2>
 <p>Integration tests exercise the interactions between different components of a system. Once the component test is passed successfully it move to <em>Packages</em></p>
-<p>![Component testing](images/Job2/Component test.png)</p>
+<p><img alt="Component testing" src="../images/Job2/Component test.png" /></p>
 <h3 id="source-code-management_1">Source Code Management</h3>
 <p>To get the information related source code management click on the <strong>component_test_carts</strong> and the click on <strong>configure</strong></p>
 <p>In Source Code Management we select the option <strong>NONE</strong>.</p>
@@ -200,7 +145,7 @@
 <p><img alt="Build Component" src="../images/Job2/BUILDCOMPO.png" /></p>
 <h3 id="post-build-action">Post-build Action</h3>
 <p>If the <strong>unit test</strong> and <strong>component test</strong> is successfully done then only it is triggered to the package build.</p>
-<p>![Post](images/Job2/post component.png)</p>
+<p><img alt="Post" src="../images/Job2/post component.png" /></p>
 <h2 id="job-3-packages">Job 3 (Packages)</h2>
 <p>Once the Component test is passed it goes into the packages stage. The aim of packages is to depoly it to Artifactory.</p>
 <p><img alt="Packages" src="../images/Job3/packages.png" /></p>
@@ -218,7 +163,7 @@
 <p><img alt="Build Package" src="../images/Job3/Buildpackage.png" /></p>
 <h3 id="post-build-actions">Post-build Actions</h3>
 <p>This is the section where everything build earlier i.e. <strong>unit_test_cart</strong> and <strong>component_test_carts</strong> artifacts are deployed to the <strong>Artifactory</strong>. Here we need to define the <em>target release</em> and <em>target snapshot</em> needed for the Artifactory.</p>
-<p>![PBA](images/Job3/PBA PACKAGE.png)</p>
+<p><img alt="PBA" src="../images/Job3/PBA PACKAGE.png" /></p>
 <h2 id="artifactory-">ARTIFACTORY :-</h2>
 <p>This is where you will be able to see that the cart module have been deployed to the <strong>Artifactory</strong>.</p>
 <p><img alt="Artifactory" src="../images/ART/artifactory.png" /></p>
@@ -226,13 +171,6 @@
             </div>
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-      
-        <a href="../080_catalogue/" class="btn btn-neutral" title="Build Pipeline For Catalogue"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>
@@ -256,15 +194,12 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../080_catalogue/" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      
       
     </span>
 </div>
     <script>var base_url = '..';</script>
-    <script src="../js/theme.js"></script>
-      <script src="../search/require.js"></script>
-      <script src="../search/search.js"></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
 
 </body>
 </html>

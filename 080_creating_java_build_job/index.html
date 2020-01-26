@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Creating First Project - Ultimate Devops Bootcamp</title>
+  <title>Creating  Build Job for a Java Project - Ultimate Devops Bootcamp</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
@@ -17,8 +17,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Creating First Project";
-    var mkdocs_page_input_path = "050_jenkins_jobs.md";
+    var mkdocs_page_name = "Creating  Build Job for a Java Project";
+    var mkdocs_page_input_path = "080_creating_java_build_job.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -90,7 +90,7 @@
     
       
     
-    <li>Creating First Project</li>
+    <li>Creating  Build Job for a Java Project</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -100,60 +100,64 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="creating-first-project">Creating First Project</h1>
-<p>In this session we are going to create and launch our first project  with jenkins. We will be using a free style project for this example.</p>
-<h2 id="types-of-jobs">Types of Jobs</h2>
-<p>With Jenkins you could create following kind of projects or jobs.</p>
+                <h1 id="creating-build-job-for-a-java-project">Creating  Build Job for a Java Project</h1>
+<p>In this chapter, we are going to create a job to build/compile a sample java application with maven.</p>
+<h2 id="creating-maven-project">Creating Maven Project</h2>
+<p>Before we start to create our build job, we need to install <strong>maven-integration</strong> plugin.</p>
+<p><img alt="Maven Plugin" src="../images/chap8/plugin.jpg" /></p>
+<p>To create a build project,</p>
 <ul>
-<li>Free Style</li>
-<li>Maven</li>
-<li>External Job</li>
-<li>Multi Configuration</li>
+<li>From New Item, select <strong>Maven Project</strong> and provide it a name e.g. "build".</li>
 </ul>
-<h2 id="jenkins-jobs-anatomy">Jenkins Jobs Anatomy</h2>
-<p>A typical style jenkins jobs has the following sections.</p>
-<p><img alt="Anatomy of a Jenkins Job" src="../images/chap4/jenkins_job_anatomy.png" /></p>
+<p><strong>Note</strong>: If you do not see <strong>Maven Project</strong> option on the job creation page, install <strong>Maven Integration Plugin</strong> from plugins manager.</p>
+<p><img alt="Maven Project" src="../images/chap8/maven_proj.png" /></p>
 <ul>
-<li>Name/description</li>
-<li>Advanced Option</li>
-<li>Source Code Management</li>
-<li>Build Triggers</li>
-<li>Pre Build</li>
-<li>Build</li>
-<li>Post Build</li>
+<li>From the configuration screen, scroll to Source Code Management, select GIT and provide repository URL</li>
 </ul>
-<h2 id="creating-a-simple-job">Creating a Simple Job</h2>
-<p>Lets now create a simple job using jenkins to run a hello world program.</p>
-<ol>
-<li>From Jenkins Main page, click on <strong>New Item</strong>.
-    <img alt="New Job" src="../images/chap4/new_item.jpg" />  </li>
-<li>Provide a name to the project in Item Name i.e. "job1". Check against Free Style Project.
-    <img alt=" Naming Jenkins Job " src="../images/chap4/job_name.jpg" /></li>
-</ol>
-<p>Next screen opens the job configuration page. On the job configuration page,</p>
-<ol>
-<li>
-<p>Add job description. e.g., "Our first Jenkins Job".</p>
-</li>
-<li>
-<p>Skip Source Code Management and Build Triggers, and scroll down to <strong>Build</strong> configurations.</p>
-</li>
-<li>
-<p>From "Add Build Step" select <strong>Execute Shell</strong> and provide commands to execute. Since this  is a  mock job, you could provide following sample code,</p>
-</li>
-</ol>
-<pre><code>#!/bin/bash
-echo &quot;Hello World !&quot;
-sleep 10
+<p>e.g. https://github.com/schoolofdevops/demo</p>
+<p><img alt="GIT SCM" src="../images/chap8/scm_git.png" /></p>
+<p>From <strong>Build Triggers</strong> select <strong>Poll SCM</strong>. Lets configure it to poll every 5 minutes using the following schedule</p>
+<pre><code>H/2 * * * *
 </code></pre>
 
-<p>Review and click on save to go to project page.</p>
-<p><img alt="Project Page" src="../images/chap4/project_page.jpg" /></p>
-<h2 id="building-job-for-the-first-time">Building Job for the First Time</h2>
-<p>Click on <strong>Build Now</strong> to launch a build. Once the build is started, you would see the status in the <strong>Build History</strong> section.</p>
-<p>Once build is finished, click on the build number which starts with # . Clicking on the build number e.g. <strong>#1</strong> will take you to the page which shows the build stats. Option of interest on this page might be <strong>Console Status</strong> which shows the run time output.</p>
-<p><img alt="Console Output" src="../images/chap4/console_output.jpg" /></p>
+<p><img alt="Poll SCM" src="../images/chap8/poll_scm.png" /></p>
+<ul>
+<li>Scroll down to Build step and you should see Root POM selected since its a Maven Project. In the Goals and options section, provide <strong>compile</strong> as a goal.</li>
+</ul>
+<p><img alt="Poll SCM" src="../images/chap8/goal_compile.png" /></p>
+<p>In addition to compile, following are the goals Maven project could take.</p>
+<ol>
+<li>validate</li>
+<li>compile - compile source code</li>
+<li>test - unit tests</li>
+<li>package - build jar/war</li>
+<li>integration-test</li>
+<li>verify</li>
+<li>install</li>
+<li>
+<p>deploy</p>
+</li>
+<li>
+<p>Save the job and click on <strong>Build Now</strong>.  Following is a snippet from the output of the build job.</p>
+</li>
+</ol>
+<pre><code>[INFO] Compiling 1 source file to /var/jenkins_home/workspace/build/target/classes
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 10.216 s
+[INFO] Finished at: 2016-04-27T17:11:30+00:00
+[INFO] Final Memory: 19M/240M
+[INFO] ------------------------------------------------------------------------
+Waiting for Jenkins to finish collecting data
+[JENKINS] Archiving /var/jenkins_home/workspace/build/pom.xml to com.example.app/maven-app/3.0-release/maven-app-3.0-release.pom
+channel stopped
+Finished: SUCCESS
+</code></pre>
+
 <hr />
+<p>:point_left:<a href="https://github.com/schoolofdevops/learn-jenkins/blob/master/continuous-delivery/chapters/070_preparing_for_java_builds.md"><strong>Prev</strong> Chapter 7: Preparing to build Java  Projects</a></p>
+<p>:point_right: <a href="https://github.com/schoolofdevops/learn-jenkins/blob/master/continuous-delivery/chapters/090_resolving_libs_from_artifactory.md"><strong>Next</strong> Chapter 9: Integrating with Artifactory</a></p>
               
             </div>
           </div>
