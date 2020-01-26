@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Building Docker Images - Ultimate Devops Bootcamp</title>
+  <title>Building and Publishing Images - Ultimate Devops Bootcamp</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
@@ -17,7 +17,7 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Building Docker Images";
+    var mkdocs_page_name = "Building and Publishing Images";
     var mkdocs_page_input_path = "d03-docker-images.md";
     var mkdocs_page_url = null;
   </script>
@@ -65,7 +65,33 @@
           
             <li class="toctree-l1">
 		
-    <a class="" href="../docker_index/">Docker</a>
+    <span class="caption-text">Docker</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../010_docker_envi/">Setting up Docker</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../d02-docker-operations/">Launching and Operating Containers</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Building and Publishing Images</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#building-docker-images">Building Docker Images</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#building-an-image-manually-with-docker-commit">Building an image manually with docker commit</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+    </ul>
 	    </li>
           
             <li class="toctree-l1">
@@ -128,8 +154,12 @@
     <li><a href="..">Docs</a> &raquo;</li>
     
       
+        
+          <li>Docker &raquo;</li>
+        
+      
     
-    <li>Building Docker Images</li>
+    <li>Building and Publishing Images</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -247,6 +277,15 @@ CMD &quot;bin/facebooc&quot;
           </div>
           <footer>
   
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../020_install_jenkins_jfrog_artifactory/" class="btn btn-neutral float-right" title="Setting up CI-CD Environment">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../d02-docker-operations/" class="btn btn-neutral" title="Launching and Operating Containers"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
 
   <hr/>
 
@@ -269,6 +308,10 @@ CMD &quot;bin/facebooc&quot;
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
+        <span><a href="../d02-docker-operations/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../020_install_jenkins_jfrog_artifactory/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
