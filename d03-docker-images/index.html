@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Another chapter - Ultimate Devops Bootcamp</title>
+  <title>Building Docker Images - Ultimate Devops Bootcamp</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
@@ -17,8 +17,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Another chapter";
-    var mkdocs_page_input_path = "another_chapter.md";
+    var mkdocs_page_name = "Building Docker Images";
+    var mkdocs_page_input_path = "d03-docker-images.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -95,7 +95,7 @@
     
       
     
-    <li>Another chapter</li>
+    <li>Building Docker Images</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -105,13 +105,109 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="another-chapter">Another chapter</h1>
-<p>This is another chapter.[^numbering] It also includes a little code fencing, mainly to test an edge case for the sake of the Softcover test suite:[^why_code_fencing]</p>
-<pre><code class="console">$ find . \( -name \*.gemspec -or -name \*.jpg \) -type f
+                <h1 id="building-docker-images">Building Docker Images</h1>
+<p>In this lab, you are going to learn how to bulild images, publish those and work with the docker registry. </p>
+<h2 id="building-an-image-manually-with-docker-commit">Building an image manually with docker commit</h2>
+<p>Lets take the following application as an example. You first need to start by cloning the code,</p>
+<pre><code>git clone https://github.com/schoolofdevops/facebooc.git
+
 </code></pre>
 
-<p>[^numbering]: Footnotes are numbered on a per-chapter basis.</p>
-<p>[^why_code_fencing]: The test suite uses the template files to stress-test the build system. In this case, there used to be a bug when math syntax appeared in a non-math context. Including the code fencing as above ensures that any regressions will cause the test suite to fail.</p>
+<p>after cloning this repo we are going to launch ubuntu image this application running on port 1600 that why we are already exposing port.</p>
+<pre><code>docker container run -idt --name fb -p 16000:16000 ubuntu bash
+</code></pre>
+
+<p>connect to that container using following command</p>
+<pre><code>docker exec -it fb bash
+</code></pre>
+
+<p>after connecting that container use following instructions.</p>
+<p>Install following package:</p>
+<ul>
+<li>build-essential</li>
+<li>make</li>
+<li>libsqlite3-dev</li>
+<li>sqlite3</li>
+</ul>
+<pre><code>sudo apt-get update
+sudo apt-get install -yq build-essential make libsqlite3-dev sqlite3
+
+</code></pre>
+
+<p>after installing this packages we need source code cpoy your source code in insisde the container.</p>
+<pre><code>docker cp facebooc/ fb:/opt/
+</code></pre>
+
+<p>after copying the data go inside the container</p>
+<pre><code>docker exec -it fb bash
+</code></pre>
+
+<p>switch the dir.</p>
+<pre><code>cd /opt/facebooc/
+</code></pre>
+
+<p>then Build the application using following command</p>
+<pre><code>make all
+</code></pre>
+
+<p>Run the application using binary</p>
+<pre><code>bin/facebooc
+</code></pre>
+
+<p>now go to the web browser <strong>host_ip:16000</strong> or <strong>localhost:16000</strong></p>
+<p>then exit the container commit container using following command including your own tag with your docker hub id</p>
+<pre><code>docker container commit fb initcron/fb:v1
+</code></pre>
+
+<p>After creating image push to docker hub registry</p>
+<pre><code>docker login
+</code></pre>
+
+<pre><code>docker image push initcron/fb:v1
+</code></pre>
+
+<h3 id="automatiing-image-builds-with-a-dockerfile">Automatiing image builds with a Dockerfile</h3>
+<p>Above section we build the image using manual approch. In this we going to dockerfile to build image automation. just clone the repo. using following command.</p>
+<pre><code>git clone https://github.com/schoolofdevops/facebooc.git
+
+cd facebooc
+
+git checkout docker
+
+</code></pre>
+
+<p>you can see the Dockerfile</p>
+<pre><code>cat Dockerfile
+</code></pre>
+
+<p>[output]</p>
+<pre><code>FROM  ubuntu
+
+
+WORKDIR /opt/facebooc
+
+RUN  apt-get update &amp;&amp;  \
+     apt-get install -yq build-essential make git libsqlite3-dev sqlite3
+
+
+COPY . /opt/facebooc
+
+RUN  make all
+
+EXPOSE 16000
+
+CMD &quot;bin/facebooc&quot;
+
+</code></pre>
+
+<p>then build  docker image image</p>
+<pre><code>docker image build -t initcron/fb:v2 .
+
+</code></pre>
+
+<p>after build image launch it</p>
+<pre><code>docker container run -idt -P initcron/fb:v2
+</code></pre>
               
             </div>
           </div>

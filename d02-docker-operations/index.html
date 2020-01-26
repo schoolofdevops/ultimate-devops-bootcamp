@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>010 docker envi - Ultimate Devops Bootcamp</title>
+  <title>D02 docker operations - Ultimate Devops Bootcamp</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
@@ -17,8 +17,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "010 docker envi";
-    var mkdocs_page_input_path = "010_docker_envi.md";
+    var mkdocs_page_name = "D02 docker operations";
+    var mkdocs_page_input_path = "d02-docker-operations.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -95,7 +95,7 @@
     
       
     
-    <li>010 docker envi</li>
+    <li>D02 docker operations</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -105,338 +105,11 @@
           <div role="main">
             <div class="section">
               
-                <h3 id="setting-up-and-validating-docker-environment">Setting up and validating docker environment</h3>
-<p>In this chapter, we are going to set docker environment. Visit <a href="https://docs.docker.com/install/linux/docker-ce/ubuntu/">docs.docker.com</a> this page provides all the information of how to install docker on ubuntu, mac or windows. In this page left side you can see couple of options . when you select docker CE (Docker Community Edition). Thre is also provides instructions on different os platform.</p>
-<ul>
-<li>
-<p>There are two options</p>
-</li>
-<li>
-<p>docker EE</p>
-</li>
-<li>
-<p>docker CE</p>
-</li>
-<li>
-<p>Here , we going for docker for ubuntu you can use the following script.</p>
-</li>
-</ul>
-<pre><code>#!/bin/bash
-apt-get update
-apt-get install -y git wget
-
-# Install Docker
-apt-get install \
-    apt-transport-https \
-    ca-certificates \
-    curl \
-    software-properties-common
-
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-apt-key fingerprint 0EBFCD88
-add-apt-repository \
-   &quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-   $(lsb_release -cs) \
-   stable&quot;
-
-apt-get update
-
-apt-get install -yq docker-ce
-
-</code></pre>
-
-<p>After install docker using above script you can validate using following command</p>
-<pre><code>docker version
-</code></pre>
-
-<p>[output]</p>
-<pre><code>Client:
- Version:      18.03.1-ce
- API version:  1.37
- Go version:   go1.9.5
- Git commit:   9ee9f40
- Built:        Thu Apr 26 07:17:20 2018
- OS/Arch:      linux/amd64
- Experimental: false
- Orchestrator: swarm
-
-Server:
- Engine:
-  Version:      18.03.1-ce
-  API version:  1.37 (minimum version 1.12)
-  Go version:   go1.9.5
-  Git commit:   9ee9f40
-  Built:        Thu Apr 26 07:15:30 2018
-  OS/Arch:      linux/amd64
-  Experimental: false
-
-</code></pre>
-
-<p>Run docker Hello-world</p>
-<pre><code>sudo docker run hello-world
-</code></pre>
-
-<p>[output]</p>
-<pre><code>Unable to find image 'hello-world:latest' locally
-latest: Pulling from library/hello-world
-d1725b59e92d: Pull complete 
-Digest: sha256:0add3ace90ecb4adbf7777e9aacf18357296e799f81cabc9fde470971e499788
-Status: Downloaded newer image for hello-world:latest
-
-Hello from Docker!
-This message shows that your installation appears to be working correctly.
-
-To generate this message, Docker took the following steps:
- 1. The Docker client contacted the Docker daemon.
- 2. The Docker daemon pulled the &quot;hello-world&quot; image from the Docker Hub.
-    (amd64)
- 3. The Docker daemon created a new container from that image which runs the
-    executable that produces the output you are currently reading.
- 4. The Docker daemon streamed that output to the Docker client, which sent it
-    to your terminal.
-
-To try something more ambitious, you can run an Ubuntu container with:
- $ docker run -it ubuntu bash
-
-Share images, automate workflows, and more with a free Docker ID:
- https://hub.docker.com/
-
-For more examples and ideas, visit:
- https://docs.docker.com/get-started/
-
-</code></pre>
-
-<h3 id="play-with-docker">Play-with-docker</h3>
-<p>If you don't have way to install docker locally even remote server. you can also use protal <a href="https://labs.play-with-docker.com/">play-with-docker</a></p>
-<p>Here, </p>
-<p>we have to login with your docker hub id and password. if you don't have docker hub id and password you should need to create your docker hub id and password <a href="https://hub.docker.com/">docker hub</a> . Play-with-docker gives you working docker environment. you can see the UI
-<img alt="docker" src="../images/docker-image/docker1.png" /></p>
-<p>Here, </p>
-<p>In this Page left side create instance label click on on that label they provide you docker envirenment. you can also ren the following command.</p>
-<p>docker version command shows you to all the information of docker like version, api version Git commit etc.</p>
-<pre><code>docker version
-</code></pre>
-
-<p>[output]</p>
-<pre><code>Client:
- Version:      18.03.1-ce
- API version:  1.37
- Go version:   go1.9.5
- Git commit:   9ee9f40
- Built:        Thu Apr 26 07:17:20 2018
- OS/Arch:      linux/amd64
- Experimental: false
- Orchestrator: swarm
-
-Server:
- Engine:
-  Version:      18.03.1-ce
-  API version:  1.37 (minimum version 1.12)
-  Go version:   go1.9.5
-  Git commit:   9ee9f40
-  Built:        Thu Apr 26 07:15:30 2018
-  OS/Arch:      linux/amd64
-  Experimental: false
-
-</code></pre>
-
-<p>Docker hello world image</p>
-<pre><code>docker run hello-world
-</code></pre>
-
-<p>[output]</p>
-<pre><code>Unable to find image 'hello-world:latest' locally
-latest: Pulling from library/hello-world
-d1725b59e92d: Pull complete 
-Digest: sha256:0add3ace90ecb4adbf7777e9aacf18357296e799f81cabc9fde470971e499788
-Status: Downloaded newer image for hello-world:latest
-
-Hello from Docker!
-This message shows that your installation appears to be working correctly.
-
-To generate this message, Docker took the following steps:
- 1. The Docker client contacted the Docker daemon.
- 2. The Docker daemon pulled the &quot;hello-world&quot; image from the Docker Hub.
-    (amd64)
- 3. The Docker daemon created a new container from that image which runs the
-    executable that produces the output you are currently reading.
- 4. The Docker daemon streamed that output to the Docker client, which sent it
-    to your terminal.
-
-To try something more ambitious, you can run an Ubuntu container with:
- $ docker run -it ubuntu bash
-
-Share images, automate workflows, and more with a free Docker ID:
- https://hub.docker.com/
-
-For more examples and ideas, visit:
- https://docs.docker.com/get-started/
-
-</code></pre>
-
-<p>you also need access to of docker hub. docker hub is registry where you can find bunch of images. Images are self sufficient application package into along with dependency including the os file system as well. each image has different tag, tag represents the diffrent version of perticular image tipically which map the application as well.</p>
-<p>you can use base ubuntu image</p>
-<pre><code>docker run -it ubuntu bash
-</code></pre>
-
-<p>[output]</p>
-<pre><code>Unable to find image 'ubuntu:latest' locally
-latest: Pulling from library/ubuntu
-124c757242f8: Pull complete 
-9d866f8bde2a: Pull complete 
-fa3f2f277e67: Pull complete 
-398d32b153e8: Pull complete 
-afde35469481: Pull complete 
-Digest: sha256:de774a3145f7ca4f0bd144c7d4ffb2931e06634f11529653b23eba85aef8e378
-Status: Downloaded newer image for ubuntu:latest
-
-</code></pre>
-
-<p>and you will be inside the ubuntu image container. or you can also run docker system info this is show you how many container are running , paused, stoped . this also show you how many imanges are avaible . this show all the information of docker daemon.</p>
-<pre><code>sudo docker system info
-</code></pre>
-
-<p>[output]</p>
-<pre><code>Containers: 2
- Running: 0
- Paused: 0
- Stopped: 2
-Images: 15
-Server Version: 18.03.1-ce
-Storage Driver: overlay2
- Backing Filesystem: extfs
- Supports d_type: true
- Native Overlay Diff: true
-Logging Driver: json-file
-Cgroup Driver: cgroupfs
-Plugins:
- Volume: local
- Network: bridge host macvlan null overlay
- Log: awslogs fluentd gcplogs gelf journald json-file logentries splunk syslog
-Swarm: inactive
-Runtimes: runc
-Default Runtime: runc
-Init Binary: docker-init
-containerd version: 773c489c9c1b21a6d78b5c538cd395416ec50f88
-runc version: 4fc53a81fb7c994640722ac585fa9ca548971871
-init version: 949e6fa
-Security Options:
- apparmor
- seccomp
-  Profile: default
-Kernel Version: 4.13.0-45-generic
-Operating System: Ubuntu 16.04.4 LTS
-OSType: linux
-Architecture: x86_64
-CPUs: 4
-Total Memory: 3.743GiB
-Name: gops-Inspiron-3521
-ID: EUYA:2G3W:NDNJ:4TRA:VQUX:DWPX:S274:4V26:HOHP:NC4M:YOLJ:ITMH
-Docker Root Dir: /var/lib/docker
-Debug Mode (client): false
-Debug Mode (server): false
-Registry: https://index.docker.io/v1/
-Labels:
-Experimental: false
-Insecure Registries:
- 127.0.0.0/8
-Live Restore Enabled: false
-
-</code></pre>
-
-<pre><code>docker -v
-</code></pre>
-
-<p>only shows you docker version and build</p>
-<p>[output]</p>
-<pre><code>Docker version 18.03.1-ce, build 9ee9f40
-</code></pre>
-
-<p>We can use docker cli to interact with docker daemon. Various functions of docker command is given below. Try this yourself by runnig <strong>$sudo docker</strong> command</p>
-<pre><code>docker
-</code></pre>
-
-<p>[output]</p>
-<pre><code>Usage:  docker COMMAND
-
-A self-sufficient runtime for containers
-
-Options:
-      --config string      Location of client config files (default &quot;/home/gops/.docker&quot;)
-  -D, --debug              Enable debug mode
-  -H, --host list          Daemon socket(s) to connect to
-  -l, --log-level string   Set the logging level (&quot;debug&quot;|&quot;info&quot;|&quot;warn&quot;|&quot;error&quot;|&quot;fatal&quot;) (default &quot;info&quot;)
-      --tls                Use TLS; implied by --tlsverify
-      --tlscacert string   Trust certs signed only by this CA (default &quot;/home/gops/.docker/ca.pem&quot;)
-      --tlscert string     Path to TLS certificate file (default &quot;/home/gops/.docker/cert.pem&quot;)
-      --tlskey string      Path to TLS key file (default &quot;/home/gops/.docker/key.pem&quot;)
-      --tlsverify          Use TLS and verify the remote
-  -v, --version            Print version information and quit
-
-Management Commands:
-  checkpoint  Manage checkpoints
-  config      Manage Docker configs
-  container   Manage containers
-  image       Manage images
-  network     Manage networks
-  node        Manage Swarm nodes
-  plugin      Manage plugins
-  secret      Manage Docker secrets
-  service     Manage services
-  swarm       Manage Swarm
-  system      Manage Docker
-  trust       Manage trust on Docker images
-  volume      Manage volumes
-Commands:
-  attach      Attach local standard input, output, and error streams to a running container
-  build       Build an image from a Dockerfile
-  commit      Create a new image from a container's changes
-  cp          Copy files/folders between a container and the local filesystem
-  create      Create a new container
-  deploy      Deploy a new stack or update an existing stack
-  diff        Inspect changes to files or directories on a container's filesystem
-  events      Get real time events from the server
-  exec        Run a command in a running container
-  export      Export a container's filesystem as a tar archive
-  history     Show the history of an image
-  images      List images
-  import      Import the contents from a tarball to create a filesystem image
-  info        Display system-wide information
-  inspect     Return low-level information on Docker objects
-  kill        Kill one or more running containers
-  load        Load an image from a tar archive or STDIN
-  login       Log in to a Docker registry
-  logout      Log out from a Docker registry
-  logs        Fetch the logs of a container
-  pause       Pause all processes within one or more containers
-  port        List port mappings or a specific mapping for the container
-  ps          List containers
-  pull        Pull an image or a repository from a registry
-  push        Push an image or a repository to a registry
-  rename      Rename a container
-  restart     Restart one or more containers
-  rm          Remove one or more containers
-  rmi         Remove one or more images
-  run         Run a command in a new container
-  save        Save one or more images to a tar archive (streamed to STDOUT by default)
-  search      Search the Docker Hub for images
-  start       Start one or more stopped containers
-  stats       Display a live stream of container(s) resource usage statistics
-  stop        Stop one or more running containers
-  tag         Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
-  top         Display the running processes of a container
-  unpause     Unpause all processes within one or more containers
-  update      Update configuration of one or more containers
-  version     Show the Docker version information
-  wait        Block until one or more containers stop, then print their exit codes
-
-Run 'docker COMMAND --help' for more information on a command.
-
-</code></pre>
-
-<h3 id="running-your-first-docker-container">Running your first Docker Container</h3>
-<p>when your enviromnment ready you can start your first docker container . when you running your forst docker container you need docker registry. Go to <a href="https://hub.docker.com/">docker public registry</a>. when you vist docker hub you can see bunch of images avaible here. </p>
-<p>we are going to pick basic os image alpine . alpine is distribution of linux, ubuntu etc why we are choosing this image because of footprint of image and you can look at the size of the image look like 2 0r 3 mb that is relly good for smoke testing and running samaller images.</p>
+                <p>available# Lab: Running and Operating Containers with Docker</p>
+<p>In this lab, you will learn, how to launch and operate linux containers with docker.</p>
+<h2 id="running-your-first-docker-container">Running your first Docker Container</h2>
+<p>when your environment ready you can start your first docker container . when you running your first docker container you need docker registry. Go to <a href="https://hub.docker.com/">docker public registry</a>. when you visit docker hub you can see bunch of images available here.</p>
+<p>we are going to pick basic os image alpine . alpine is distribution of linux, ubuntu etc why we are choosing this image because of footprint of image and you can look at the size of the image look like 2 0r 3 mb that is really good for smoke testing and running smaller images.</p>
 <p>Now we have a basic understanding of docker command and sub commands, let us dive straight into launching our very first container</p>
 <pre><code>docker container run alpine:3.6 uptime
 </code></pre>
@@ -547,7 +220,7 @@ Run the following commands and see that alpine container has its own namespaces 
 <pre><code>Welcome to Alpine Linux 3.4
 Kernel \r on an \m (\l)
 
-/ # 
+/ #
 
 </code></pre>
 
@@ -571,7 +244,7 @@ Kernel \r on an \m (\l)
           UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
           RX packets:64 errors:0 dropped:0 overruns:0 frame:0
           TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
-          collisions:0 txqueuelen:0 
+          collisions:0 txqueuelen:0
           RX bytes:9402 (9.1 KiB)  TX bytes:0 (0.0 B)
 
 lo        Link encap:Local Loopback  
@@ -579,14 +252,14 @@ lo        Link encap:Local Loopback
           UP LOOPBACK RUNNING  MTU:65536  Metric:1
           RX packets:0 errors:0 dropped:0 overruns:0 frame:0
           TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
-          collisions:0 txqueuelen:1000 
+          collisions:0 txqueuelen:1000
           RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
 
 </code></pre>
 
 <h3 id="essential-container-operations-list-logs-exec-cp-inspect-stop-rm">Essential Container Operations - list, logs, exec, cp, inspect, stop, rm</h3>
-<p>In this secttion we are looking for some of the essential container operations like list,logs, exec etc.</p>
-<p>First we do list the containers</p>
+<p>In this section we are looking for some of the essential container operations like list,logs, exec etc.</p>
+<p>First we  list the containers</p>
 <pre><code>docker ps -a
 </code></pre>
 
@@ -612,7 +285,7 @@ lo        Link encap:Local Loopback
 
 <p>look at the name of the first container</p>
 <p>If you want to follow the log in real-time, use -f flag</p>
-<pre><code>docker logs 5a75df45379c 
+<pre><code>docker logs 5a75df45379c
 </code></pre>
 
 <p>[output]</p>
@@ -622,7 +295,7 @@ lo        Link encap:Local Loopback
 </code></pre>
 
 <p>docker <strong>exec</strong> this command allows you to run command inside container</p>
-<pre><code>docker exec e9f957dca1b7 ps aux 
+<pre><code>docker exec e9f957dca1b7 ps aux
 </code></pre>
 
 <p>[output]</p>
@@ -855,9 +528,9 @@ lo        Link encap:Local Loopback
 <p>[output]</p>
 <pre><code>Unable to find image 'nginx:latest' locally
 latest: Pulling from library/nginx
-802b00ed6f79: Pull complete 
-e9d0e0ea682b: Pull complete 
-d8b7092b9221: Pull complete 
+802b00ed6f79: Pull complete
+e9d0e0ea682b: Pull complete
+d8b7092b9221: Pull complete
 Digest: sha256:24a0c4b4a4c0eb97a1aabb8e29f18e917d05abfe1b7a7c07857230879ce7d3d3
 Status: Downloaded newer image for nginx:latest
 6d631d2ecfddb76481e2e75c6f14373dde5907e442231c38c062574cc4b880da
@@ -873,13 +546,13 @@ Status: Downloaded newer image for nginx:latest
 
 </code></pre>
 
-<p>the container are running on  inside port 80 . If you want to acess on outside use the port 32768. docker are automatically pick up the port 
+<p>the container are running on  inside port 80 . If you want to acess on outside use the port 32768. docker are automatically pick up the port
 access this outside use your <strong>host_ip:32768</strong> in browser.</p>
 <p>you can also define specific port use following command</p>
 <pre><code>docker container run -idt -p 8888:80 nginx
 </code></pre>
 
-<pre><code>docker ps 
+<pre><code>docker ps
 </code></pre>
 
 <p>[output]</p>
@@ -896,14 +569,14 @@ access this outside use your <strong>host_ip:32768</strong> in browser.</p>
 <p>[output]</p>
 <pre><code>Unable to find image 'ghost:alpine' locally
 alpine: Pulling from library/ghost
-4fe2ade4980c: Already exists 
-eeb7d76f44e7: Pull complete 
-e35f88fcc259: Pull complete 
-b4d59ef07366: Pull complete 
-dcee404d51ae: Pull complete 
-f0d2c5f09664: Pull complete 
-6feecb37b3bd: Pull complete 
-4e29bf9bf09f: Pull complete 
+4fe2ade4980c: Already exists
+eeb7d76f44e7: Pull complete
+e35f88fcc259: Pull complete
+b4d59ef07366: Pull complete
+dcee404d51ae: Pull complete
+f0d2c5f09664: Pull complete
+6feecb37b3bd: Pull complete
+4e29bf9bf09f: Pull complete
 Digest: sha256:d1d329a9e28096003ddbce69f3fc4a81b72c2c0c9e88426fc432fd3f0e1146e1
 Status: Downloaded newer image for ghost:alpine
 4c84890e1f4438a647b287751beeda02490ed7a312c05ae4a64ba7f01047a76b
@@ -973,7 +646,7 @@ you can pull images  using docker images</p>
 <pre><code>docker pull ubuntu
 </code></pre>
 
-<p>[outpot]</p>
+<p>[output]</p>
 <pre><code>Using default tag: latest
 latest: Pulling from library/ubuntu
 Digest: sha256:de774a3145f7ca4f0bd144c7d4ffb2931e06634f11529653b23eba85aef8e378
@@ -988,7 +661,7 @@ Status: Image is up to date for ubuntu:latest
 <p>[output]</p>
 <pre><code>Using default tag: latest
 latest: Pulling from library/centos
-256b176beaff: Pull complete 
+256b176beaff: Pull complete
 Digest: sha256:6f6d986d425aeabdc3a02cb61c02abb2e78e57357e92417d6d58332856024faf
 Status: Downloaded newer image for centos:latest
 
@@ -1027,7 +700,7 @@ root        20  0.0  0.0  34400  2772 pts/1    R+   10:21   0:00 ps aux
 
 </code></pre>
 
-<p>you can run fowwing command also</p>
+<p>you can also run  following command</p>
 <pre><code>apt-get update
 apt-get install vim
 touch /opt/testfile
@@ -1042,7 +715,7 @@ docker start dev
 <pre><code>docker exec -it dev bash
 </code></pre>
 
-<p>excute the following caommand </p>
+<p>excute the following caommand</p>
 <pre><code>which vim
 ls /opt/
 </code></pre>
@@ -1063,8 +736,8 @@ ls /opt/
 <p>[output]</p>
 <pre><code>Unable to find image 'portainer/portainer:latest' locally
 latest: Pulling from portainer/portainer
-d1e017099d17: Pull complete 
-d4e5419541f5: Pull complete 
+d1e017099d17: Pull complete
+d4e5419541f5: Pull complete
 Digest: sha256:07c0e19e28e18414dd02c313c36b293758acf197d5af45077e3dd69c630e25cc
 Status: Downloaded newer image for portainer/portainer:latest
 db7a8c18cdfcae46d6ccb9d3d5ad0a48568fdc8e5827f478f0c44b95b8235bdf
@@ -1091,15 +764,15 @@ db7a8c18cdfc        portainer/portainer   &quot;/portainer&quot;             Abo
 <p><img alt="portainer" src="../images/docker-image/portainer.png" /></p>
 <p>here,we have create the password you it at least 8 char long</p>
 <p><img alt="portainer" src="../images/docker-image/portainer1.png" /></p>
-<p>here i have to use my local environment </p>
+<p>here i have to use my local environment</p>
 <ul>
-<li>click on as per your environment </li>
+<li>click on as per your environment</li>
 <li>click on connect</li>
 </ul>
 <p><img alt="portainer" src="../images/docker-image/portainer3.png" /></p>
 <p>above are the portainer page is already been setup. we dont worry abot how to launch this portainer set up this alredy avaible on docker images.</p>
 <ul>
-<li>clik on local up </li>
+<li>clik on local up</li>
 </ul>
 <p><img alt="portainer" src="../images/docker-image/portainer4.png" /></p>
 <p>here you can see how many container are present , network, volume etc</p>
@@ -1154,8 +827,8 @@ services:
       - /proc:/host/proc:ro
       - /sys:/host/sys:ro
       - /:/rootfs:ro
-    command: 
-      - '--path.procfs=/host/proc' 
+    command:
+      - '--path.procfs=/host/proc'
       - '--path.sysfs=/host/sys'
       - --collector.filesystem.ignored-mount-points
       - &quot;^/(sys|proc|dev|host|etc|rootfs/var/lib/docker/containers|rootfs/var/lib/docker/overlay2|rootfs/run/docker/netns|rootfs/var/lib/docker/aufs)($$|/)&quot;
@@ -1226,108 +899,6 @@ services:
 </code></pre>
 
 <pre><code>docker-compose down
-</code></pre>
-
-<h3 id="building-an-image-manually-with-docker-commit">Building an image manually with docker commit</h3>
-<p>In this section we are going to see how to create image of application just excute following command</p>
-<pre><code>git clone https://github.com/schoolofdevops/facebooc.git
-
-</code></pre>
-
-<p>after cloning this repo we are going to launch ubuntu image this application running on port 1600 that why we are already exposing port.</p>
-<pre><code>docker container run -idt --name fb -p 16000:16000 ubuntu bash 
-</code></pre>
-
-<p>connect to that container using following command</p>
-<pre><code>docker exec -it fb bash
-</code></pre>
-
-<p>after connecting that container use following instructions.</p>
-<p>Install following package:</p>
-<ul>
-<li>build-essential</li>
-<li>make</li>
-<li>libsqlite3-dev</li>
-<li>sqlite3</li>
-</ul>
-<pre><code>sudo apt-get update
-sudo apt-get install -yq build-essential make libsqlite3-dev sqlite3
-
-</code></pre>
-
-<p>after installing this packages we need source code cpoy your source code in insisde the container.</p>
-<pre><code>docker cp facebooc/ fb:/opt/
-</code></pre>
-
-<p>after copying the data go inside the container</p>
-<pre><code>docker exec -it fb bash
-</code></pre>
-
-<p>switch the dir.</p>
-<pre><code>cd /opt/facebooc/
-</code></pre>
-
-<p>then Build the application using following command</p>
-<pre><code>make all
-</code></pre>
-
-<p>Run the application using binary</p>
-<pre><code>bin/facebooc
-</code></pre>
-
-<p>now go to the web browser <strong>host_ip:16000</strong> or <strong>localhost:16000</strong></p>
-<p>then exit the container commit container using following command including your own tag with your docker hub id</p>
-<pre><code>docker container commit fb initcron/fb:v1
-</code></pre>
-
-<p>After creating image push to docker hub registry</p>
-<pre><code>docker login
-</code></pre>
-
-<pre><code>docker image push initcron/fb:v1
-</code></pre>
-
-<h3 id="automatiing-image-builds-with-a-dockerfile">Automatiing image builds with a Dockerfile</h3>
-<p>Above section we build the image using manual approch. In this we going to dockerfile to build image automation. just clone the repo. using following command.</p>
-<pre><code>git clone https://github.com/schoolofdevops/facebooc.git
-
-cd facebooc
-
-git checkout docker
-
-</code></pre>
-
-<p>you can see the Dockerfile</p>
-<pre><code>cat Dockerfile
-</code></pre>
-
-<p>[output]</p>
-<pre><code>FROM  ubuntu
-
-
-WORKDIR /opt/facebooc
-
-RUN  apt-get update &amp;&amp;  \
-     apt-get install -yq build-essential make git libsqlite3-dev sqlite3 
-
-
-COPY . /opt/facebooc
-
-RUN  make all 
-
-EXPOSE 16000
-
-CMD &quot;bin/facebooc&quot;
-
-</code></pre>
-
-<p>then build  docker image image </p>
-<pre><code>docker image build -t initcron/fb:v2 .
-
-</code></pre>
-
-<p>after build image launch it</p>
-<pre><code>docker container run -idt -P initcron/fb:v2
 </code></pre>
               
             </div>
